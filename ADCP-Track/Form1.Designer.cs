@@ -66,6 +66,7 @@
             this.RawDataQuality = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.textBoxRawVelo = new System.Windows.Forms.TextBox();
             this.textBoxRawData = new System.Windows.Forms.TextBox();
+            this.labelADCP = new System.Windows.Forms.Label();
             menuStripTools = new System.Windows.Forms.MenuStrip();
             menuStripTools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RawVelocity)).BeginInit();
@@ -152,14 +153,14 @@
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
             this.helpToolStripMenuItem1.Text = "Help";
             this.helpToolStripMenuItem1.Click += new System.EventHandler(this.helpToolStripMenuItem1_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -276,6 +277,7 @@
             // buttonCFG
             // 
             this.buttonCFG.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonCFG.AutoSize = true;
             this.buttonCFG.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonCFG.Location = new System.Drawing.Point(809, 30);
             this.buttonCFG.Name = "buttonCFG";
@@ -288,6 +290,7 @@
             // RawVelocity
             // 
             this.RawVelocity.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.RawVelocity.BackColor = System.Drawing.Color.Black;
             chartArea5.Name = "ChartArea1";
             this.RawVelocity.ChartAreas.Add(chartArea5);
             legend5.BackColor = System.Drawing.Color.White;
@@ -321,6 +324,7 @@
             // RawDataQuality
             // 
             this.RawDataQuality.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.RawDataQuality.BackColor = System.Drawing.Color.Black;
             chartArea6.BackSecondaryColor = System.Drawing.Color.Black;
             chartArea6.Name = "ChartArea1";
             this.RawDataQuality.ChartAreas.Add(chartArea6);
@@ -349,7 +353,7 @@
             // 
             // textBoxRawVelo
             // 
-            this.textBoxRawVelo.Location = new System.Drawing.Point(141, 412);
+            this.textBoxRawVelo.Location = new System.Drawing.Point(149, 378);
             this.textBoxRawVelo.Name = "textBoxRawVelo";
             this.textBoxRawVelo.Size = new System.Drawing.Size(256, 20);
             this.textBoxRawVelo.TabIndex = 8;
@@ -357,10 +361,21 @@
             // 
             // textBoxRawData
             // 
-            this.textBoxRawData.Location = new System.Drawing.Point(742, 411);
+            this.textBoxRawData.Location = new System.Drawing.Point(794, 378);
             this.textBoxRawData.Name = "textBoxRawData";
             this.textBoxRawData.Size = new System.Drawing.Size(209, 20);
             this.textBoxRawData.TabIndex = 9;
+            // 
+            // labelADCP
+            // 
+            this.labelADCP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelADCP.AutoSize = true;
+            this.labelADCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelADCP.Location = new System.Drawing.Point(12, 625);
+            this.labelADCP.Name = "labelADCP";
+            this.labelADCP.Size = new System.Drawing.Size(105, 31);
+            this.labelADCP.TabIndex = 10;
+            this.labelADCP.Text = "ADCP :";
             // 
             // ADCPTrack
             // 
@@ -370,6 +385,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1334, 661);
+            this.Controls.Add(this.labelADCP);
             this.Controls.Add(this.textBoxRawData);
             this.Controls.Add(this.textBoxRawVelo);
             this.Controls.Add(this.RawDataQuality);
@@ -424,6 +440,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.TextBox textBoxRawVelo;
         private System.Windows.Forms.TextBox textBoxRawData;
+        private System.Windows.Forms.Label labelADCP;
     }
 }
 

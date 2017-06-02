@@ -58,6 +58,12 @@
     <Compile Include="AutoConfig.Designer.cs">
       <DependentUpon>AutoConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="BotomTrack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BotomTrack.Designer.cs">
+      <DependentUpon>BotomTrack.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class_PD0_55.cs" />
     <Compile Include="ConnectionADCP.cs">
       <SubType>Form</SubType>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AutoConfig.resx">
       <DependentUpon>AutoConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BotomTrack.resx">
+      <DependentUpon>BotomTrack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConnectionADCP.resx">
       <DependentUpon>ConnectionADCP.cs</DependentUpon>

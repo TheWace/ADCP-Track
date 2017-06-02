@@ -141,8 +141,6 @@ namespace ADCP_Track
         {
             //ouvre un terminal et la connection avec l'ADCP pour lui envoyer manuellement des commandes
            
-
-
         }
 
         private void connexionToolStripMenuItem_Click(object sender, EventArgs e)
