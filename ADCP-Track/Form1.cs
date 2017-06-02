@@ -171,5 +171,11 @@ namespace ADCP_Track
             new About().Show();
             
         }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            serialPort.Close();
+         
+        }
     }
 }

@@ -106,20 +106,21 @@
             // connexionToolStripMenuItem
             // 
             this.connexionToolStripMenuItem.Name = "connexionToolStripMenuItem";
-            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.connexionToolStripMenuItem.Text = "Connexion";
             this.connexionToolStripMenuItem.Click += new System.EventHandler(this.connexionToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
@@ -317,6 +318,7 @@
             this.RawVelocity.TabIndex = 6;
             this.RawVelocity.Text = "chartRawVelocity";
             title5.Alignment = System.Drawing.ContentAlignment.TopCenter;
+            title5.ForeColor = System.Drawing.Color.White;
             title5.Name = "Raw Velocity";
             title5.Text = "Raw Velocity";
             this.RawVelocity.Titles.Add(title5);
@@ -347,6 +349,7 @@
             this.RawDataQuality.TabIndex = 7;
             this.RawDataQuality.Text = "chartRawDataQuality";
             title6.Alignment = System.Drawing.ContentAlignment.TopCenter;
+            title6.ForeColor = System.Drawing.Color.White;
             title6.Name = "Raw Data Quality";
             title6.Text = "Raw Data Quality";
             this.RawDataQuality.Titles.Add(title6);
