@@ -27,7 +27,35 @@ namespace ADCP_Track
 
         private void buttonConfigAuto_Click(object sender, EventArgs e)
         {
+            {
 
+                Cursor.Current = Cursors.WaitCursor;
+
+                comboBoxCOM.Items.Clear();
+
+                string[] ports = SerialPort.GetPortNames();
+                foreach (string tempPortName in ports)
+                {
+                    using (SerialPort TempPort = new SerialPort(tempPortName))
+                    {
+                        try { TempPort.Open(); }
+                        catch { }
+                        finally
+                        {
+                            if (TempPort.IsOpen)
+                            {
+                                comboBoxCOM.Items.Add(tempPortName);
+                                TempPort.Close();
+                            }
+                            
+                        }
+                    }
+                }
+
+                Cursor.Current = Cursors.Default;
+
+
+            }
         }
 
 
@@ -36,11 +64,18 @@ namespace ADCP_Track
             try
             {
                 Serip.Open();
+                this.Close();
             }
             catch (System.IO.IOException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
+
 
 
         }
