@@ -19,8 +19,13 @@ namespace ADCP_Track
 
         private void buttonValid_Click(object sender, EventArgs e)
         {
+            if(textBoxFileName.Text == "")
+            {
+                this.DialogResult = DialogResult.Cancel;
+            }
+            
             //Executera le sript
-            //this.Close();
+            this.Close();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -47,6 +52,7 @@ namespace ADCP_Track
             if (dlg.ShowDialog(this) == DialogResult.OK)
             {
                 textBoxFileName.Text = dlg.FileName;
+                buttonValid.Enabled = true;
             }
         }
     }

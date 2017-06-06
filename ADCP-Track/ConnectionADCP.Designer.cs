@@ -88,6 +88,7 @@
             this.comboBoxCOM.Name = "comboBoxCOM";
             this.comboBoxCOM.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCOM.TabIndex = 3;
+            this.comboBoxCOM.Text = "COM1";
             this.comboBoxCOM.SelectedIndexChanged += new System.EventHandler(this.comboBoxCOM_SelectedIndexChanged);
             // 
             // comboBoxBaudrate
@@ -108,12 +109,14 @@
             this.comboBoxBaudrate.Name = "comboBoxBaudrate";
             this.comboBoxBaudrate.Size = new System.Drawing.Size(121, 21);
             this.comboBoxBaudrate.TabIndex = 4;
+            this.comboBoxBaudrate.Text = "9600";
             this.comboBoxBaudrate.SelectedIndexChanged += new System.EventHandler(this.comboBoxBaudrate_SelectedIndexChanged);
             // 
             // comboBoxParity
             // 
             this.comboBoxParity.FormattingEnabled = true;
             this.comboBoxParity.Location = new System.Drawing.Point(32, 190);
+            this.comboBoxParity.MaxDropDownItems = 1;
             this.comboBoxParity.Name = "comboBoxParity";
             this.comboBoxParity.Size = new System.Drawing.Size(121, 21);
             this.comboBoxParity.TabIndex = 5;
@@ -124,6 +127,7 @@
             this.comboBoxBits.FormattingEnabled = true;
             this.comboBoxBits.Location = new System.Drawing.Point(32, 146);
             this.comboBoxBits.Name = "comboBoxBits";
+            this.comboBoxBits.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBoxBits.Size = new System.Drawing.Size(121, 21);
             this.comboBoxBits.TabIndex = 6;
             this.comboBoxBits.Text = "1";

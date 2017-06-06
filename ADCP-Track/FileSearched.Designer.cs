@@ -44,6 +44,8 @@
             // 
             // buttonValid
             // 
+            this.buttonValid.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.buttonValid.Enabled = false;
             this.buttonValid.Location = new System.Drawing.Point(25, 65);
             this.buttonValid.Name = "buttonValid";
             this.buttonValid.Size = new System.Drawing.Size(75, 23);

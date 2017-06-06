@@ -27,35 +27,37 @@ namespace ADCP_Track
 
         private void buttonConfigAuto_Click(object sender, EventArgs e)
         {
+        
+            Cursor.Current = Cursors.WaitCursor;
+
+            comboBoxCOM.Items.Clear();
+
+            string[] ports = SerialPort.GetPortNames();
+            foreach (string tempPortName in ports)
             {
-
-                Cursor.Current = Cursors.WaitCursor;
-
-                comboBoxCOM.Items.Clear();
-
-                string[] ports = SerialPort.GetPortNames();
-                foreach (string tempPortName in ports)
+                using (SerialPort TempPort = new SerialPort(tempPortName))
                 {
-                    using (SerialPort TempPort = new SerialPort(tempPortName))
+                    try { TempPort.Open(); }
+                    catch { }
+                    finally
                     {
-                        try { TempPort.Open(); }
-                        catch { }
-                        finally
+                        if (TempPort.IsOpen)
                         {
-                            if (TempPort.IsOpen)
-                            {
-                                comboBoxCOM.Items.Add(tempPortName);
-                                TempPort.Close();
-                            }
-                            
+                            comboBoxCOM.Items.Add(tempPortName);
+                            TempPort.Close();
+                            this.comboBoxCOM.Text = tempPortName.ToString();
                         }
+                        else
+                        {
+                            comboBoxCOM.Items.Add(tempPortName);
+                        }
+
                     }
+                         
                 }
-
-                Cursor.Current = Cursors.Default;
-
-
             }
+
+            Cursor.Current = Cursors.Default;
         }
 
 
@@ -74,6 +76,10 @@ namespace ADCP_Track
             {
                 MessageBox.Show(ex.Message);
                 this.Close();
+            }catch(UnauthorizedAccessException ex)
+            {
+       
+                MessageBox.Show(ex.Message);
             }
 
 
@@ -83,6 +89,7 @@ namespace ADCP_Track
         private void comboBoxCOM_SelectedIndexChanged(object sender, EventArgs e)
         {
             Serip.PortName = comboBoxCOM.SelectedItem.ToString();
+            
         }
 
         private void comboBoxBaudrate_SelectedIndexChanged(object sender, EventArgs e)
@@ -95,6 +102,5 @@ namespace ADCP_Track
 
         }
 
-        
     }
 }
