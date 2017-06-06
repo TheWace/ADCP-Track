@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace ADCP_Track
         Class_PD0_55 DataSend = new Class_PD0_55();
         public About about;
         public BotomTrack bt;
-
+        public ProcessStartInfo psi;
         public ADCPTrack()
         {
             InitializeComponent();
@@ -32,6 +33,15 @@ namespace ADCP_Track
             
             about = new About();
             bt = new BotomTrack();
+
+            psi = new ProcessStartInfo("cmd.exe")
+            {
+                RedirectStandardError = true,
+                RedirectStandardInput = true,
+                RedirectStandardOutput = true,
+                UseShellExecute = false
+
+            };
 
         }
 
@@ -140,7 +150,13 @@ namespace ADCP_Track
 
         private void commandToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string strp = Environment.CurrentDirectory;
+
             //ouvre un terminal et la connection avec l'ADCP pour lui envoyer manuellement des commandes
+            Process p = Process.Start(psi);
+            StreamWriter sw = p.StandardInput;
+            StreamReader sr = p.StandardOutput;
+            p.StartInfo.WorkingDirectory = @"" + strp + "";
            
         }
 
