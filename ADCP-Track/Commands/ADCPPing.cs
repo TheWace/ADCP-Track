@@ -8,11 +8,12 @@ namespace ADCP_Track.Commands
 {
     class ADCPPing : Commands
     {
+        
         public static void StartPing()  //Lancement de l'ADCP
         {
             try
             {
-                Serip.Write("\t");
+               // Serip.Write("\t");
             }
             catch (InvalidOperationException)
             {

@@ -9,6 +9,6 @@ namespace ADCP_Track.Commands
 {
     interface Commands
     {
-        
+        SerialPort Serip { get; set; }
     }
 }
