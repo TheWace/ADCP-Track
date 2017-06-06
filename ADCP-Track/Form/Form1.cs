@@ -18,6 +18,8 @@ namespace ADCP_Track
     {
 
         Class_PD0_55 DataSend = new Class_PD0_55();
+        public About about;
+        public BotomTrack bt;
 
         public ADCPTrack()
         {
@@ -28,6 +30,8 @@ namespace ADCP_Track
         private void ADCPTrack_Load(object sender, EventArgs e)
         {
             
+            about = new About();
+            bt = new BotomTrack();
 
         }
 
@@ -50,7 +54,7 @@ namespace ADCP_Track
 
         private void buttonBOT_Click(object sender, EventArgs e)
         {
-
+            bt.Show(); 
         }
 
         private void buttonLDR_Click(object sender, EventArgs e)
@@ -83,26 +87,23 @@ namespace ADCP_Track
 
         public void UpdateColorControls(Control myControl)
         {
-            
-
-            if (!myControl.BackColor.Equals(Color.Black))
+            if (!myControl.BackColor.Equals(Color.DimGray))
             {
-                this.BackColor = Color.Black;
-                this.buttonBOT.BackColor = Color.Black;
-                this.buttonNAV.BackColor = Color.Black;
-                this.buttonCFG.BackColor = Color.Black;
+                this.BackColor = Color.DimGray;
+                this.buttonBOT.BackColor = Color.DimGray;
+                this.buttonNAV.BackColor = Color.DimGray;
+                this.buttonCFG.BackColor = Color.DimGray;
                 this.buttonBOT.ForeColor = Color.White;
                 this.buttonNAV.ForeColor = Color.White;
                 this.buttonCFG.ForeColor = Color.White;
                 this.ToolStripMenuItemAntiSun.BackColor = Color.White;
-                this.ToolStripMenuItemAntiSun.ForeColor = Color.Black;
-                myControl.BackColor = Color.Black;
+                this.ToolStripMenuItemAntiSun.ForeColor = Color.DimGray;
+                myControl.BackColor = Color.DimGray;
                 myControl.ForeColor = Color.White;
-                    
             }
             else
             {
-                this.ToolStripMenuItemAntiSun.BackColor = Color.Black;
+                this.ToolStripMenuItemAntiSun.BackColor = Color.DimGray;
                 this.ToolStripMenuItemAntiSun.ForeColor = Color.White;
                 this.BackColor = Color.White;
                 myControl.BackColor = Color.White;
@@ -156,25 +157,20 @@ namespace ADCP_Track
             this.Close();
         }
 
-        private void textBoxRawVelo_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void helpToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new About().Show();
-            
+        { 
+            about.Show();
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             serialPort.Close();
         }
+
     }
 }

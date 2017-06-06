@@ -46,62 +46,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.cs">
+    <Compile Include="Commands\ADCPPing.cs" />
+    <Compile Include="Commands\Commands.cs" />
+    <Compile Include="Form\About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="About.Designer.cs">
+    <Compile Include="Form\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="AutoConfig.cs">
+    <Compile Include="Form\AutoConfig.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AutoConfig.Designer.cs">
+    <Compile Include="Form\AutoConfig.Designer.cs">
       <DependentUpon>AutoConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="BotomTrack.cs">
+    <Compile Include="Form\BotomTrack.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BotomTrack.Designer.cs">
+    <Compile Include="Form\BotomTrack.Designer.cs">
       <DependentUpon>BotomTrack.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExecSript.cs" />
-    <Compile Include="Class_PD0_55.cs" />
-    <Compile Include="ConnectionADCP.cs">
+    <Compile Include="Commands\ExecSript.cs" />
+    <Compile Include="Class\Class_PD0_55.cs" />
+    <Compile Include="Form\ConnectionADCP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConnectionADCP.Designer.cs">
+    <Compile Include="Form\ConnectionADCP.Designer.cs">
       <DependentUpon>ConnectionADCP.cs</DependentUpon>
     </Compile>
-    <Compile Include="FileSearched.cs">
+    <Compile Include="Form\FileSearched.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FileSearched.Designer.cs">
+    <Compile Include="Form\FileSearched.Designer.cs">
       <DependentUpon>FileSearched.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Form\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Form\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Class\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="About.resx">
+    <EmbeddedResource Include="Form\About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AutoConfig.resx">
+    <EmbeddedResource Include="Form\AutoConfig.resx">
       <DependentUpon>AutoConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BotomTrack.resx">
+    <EmbeddedResource Include="Form\BotomTrack.resx">
       <DependentUpon>BotomTrack.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConnectionADCP.resx">
+    <EmbeddedResource Include="Form\ConnectionADCP.resx">
       <DependentUpon>ConnectionADCP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FileSearched.resx">
+    <EmbeddedResource Include="Form\FileSearched.resx">
       <DependentUpon>FileSearched.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Form\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

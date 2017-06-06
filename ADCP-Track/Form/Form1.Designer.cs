@@ -289,7 +289,7 @@
             // RawVelocity
             // 
             this.RawVelocity.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.RawVelocity.BackColor = System.Drawing.Color.Black;
+            this.RawVelocity.BackColor = System.Drawing.Color.DimGray;
             chartArea1.Name = "ChartArea1";
             this.RawVelocity.ChartAreas.Add(chartArea1);
             legend1.BackColor = System.Drawing.Color.White;
@@ -324,7 +324,7 @@
             // RawDataQuality
             // 
             this.RawDataQuality.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.RawDataQuality.BackColor = System.Drawing.Color.Black;
+            this.RawDataQuality.BackColor = System.Drawing.Color.DimGray;
             chartArea2.BackSecondaryColor = System.Drawing.Color.Black;
             chartArea2.Name = "ChartArea1";
             this.RawDataQuality.ChartAreas.Add(chartArea2);
