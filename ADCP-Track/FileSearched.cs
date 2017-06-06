@@ -23,8 +23,8 @@ namespace ADCP_Track
             {
                 this.DialogResult = DialogResult.Cancel;
             }
-            
-            //Executera le sript
+
+            ExecSript.ExecuteScript(new string[] { textBoxFileName.Text });
             this.Close();
         }
 
