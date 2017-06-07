@@ -13,7 +13,7 @@ namespace ADCP_Track.Commands
 
         public SerialPort Serip { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public  void Break() //Break de l'ADCP
+        public void Break() //Break de l'ADCP
         {
 
             try //Vérification de la connexion du port

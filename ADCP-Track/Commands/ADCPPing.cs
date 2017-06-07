@@ -16,7 +16,7 @@ namespace ADCP_Track.Commands
         {
             try
             {
-               // Serip.Write("\t");
+                Serip.Write("\t");
             }
             catch (InvalidOperationException)
             {

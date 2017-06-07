@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using ADCP_Track.Commands;
 using System.Windows.Forms;
 
 namespace ADCP_Track
@@ -34,14 +35,7 @@ namespace ADCP_Track
             about = new About();
             bt = new BotomTrack();
 
-            psi = new ProcessStartInfo("cmd.exe")
-            {
-                RedirectStandardError = true,
-                RedirectStandardInput = true,
-                RedirectStandardOutput = true,
-                UseShellExecute = false
-
-            };
+            
 
         }
 
@@ -151,12 +145,22 @@ namespace ADCP_Track
         private void commandToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string strp = Environment.CurrentDirectory;
-
+            
+                
             //ouvre un terminal et la connection avec l'ADCP pour lui envoyer manuellement des commandes
-            Process p = Process.Start(psi);
-            StreamWriter sw = p.StandardInput;
-            StreamReader sr = p.StandardOutput;
-            p.StartInfo.WorkingDirectory = @"" + strp + "";
+            
+            //
+            // TODO !!!
+            //
+   
+            Process p = new Process();
+            p.StartInfo.RedirectStandardError = true;
+            p.StartInfo.RedirectStandardInput = true;
+            p.StartInfo.RedirectStandardOutput = true;
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.FileName = "cmd.exe";
+            p.Start();
+            p.StandardInput.WriteLine("MKDIR test1");
            
         }
 
@@ -188,5 +192,10 @@ namespace ADCP_Track
             serialPort.Close();
         }
 
+        private void breakToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ADCPBreak().Break();
+        }
     }
 }
+
