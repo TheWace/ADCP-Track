@@ -79,19 +79,15 @@ namespace ADCP_Track
                 this.Close();
             }catch(UnauthorizedAccessException ex)
             {
-       
                 MessageBox.Show(ex.Message);
             }
-            
-            
 
-
+           
         }
 
         public void comboBoxCOM_SelectedIndexChanged(object sender, EventArgs e)
         {
             Serip.PortName = comboBoxCOM.SelectedItem.ToString();
-            
         }
 
         private void comboBoxBaudrate_SelectedIndexChanged(object sender, EventArgs e)
