@@ -301,7 +301,6 @@
             // 
             // RawVelocity
             // 
-            this.RawVelocity.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RawVelocity.BackColor = System.Drawing.Color.DimGray;
             chartArea1.Name = "ChartArea1";
             this.RawVelocity.ChartAreas.Add(chartArea1);
@@ -336,7 +335,7 @@
             // 
             // RawDataQuality
             // 
-            this.RawDataQuality.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.RawDataQuality.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RawDataQuality.BackColor = System.Drawing.Color.DimGray;
             chartArea2.BackSecondaryColor = System.Drawing.Color.Black;
             chartArea2.Name = "ChartArea1";
@@ -381,7 +380,8 @@
             // 
             // textBoxPortCOM
             // 
-            this.textBoxPortCOM.Location = new System.Drawing.Point(222, 629);
+            this.textBoxPortCOM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBoxPortCOM.Location = new System.Drawing.Point(142, 632);
             this.textBoxPortCOM.Name = "textBoxPortCOM";
             this.textBoxPortCOM.Size = new System.Drawing.Size(100, 20);
             this.textBoxPortCOM.TabIndex = 11;
