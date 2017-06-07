@@ -95,13 +95,9 @@ namespace ADCP_Track
             {
                 this.BackColor = Color.DimGray;
                 this.buttonBOT.BackColor = Color.DimGray;
-                this.buttonNAV.BackColor = Color.DimGray;
-                this.buttonCFG.BackColor = Color.DimGray;
                 this.buttonBOT.ForeColor = Color.White;
-                this.buttonNAV.ForeColor = Color.White;
-                this.buttonCFG.ForeColor = Color.White;
                 this.ToolStripMenuItemAntiSun.BackColor = Color.White;
-                this.ToolStripMenuItemAntiSun.ForeColor = Color.DimGray;
+                this.ToolStripMenuItemAntiSun.ForeColor = Color.DimGray; 
                 myControl.BackColor = Color.DimGray;
                 myControl.ForeColor = Color.White;
             }
