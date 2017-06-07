@@ -289,6 +289,7 @@
             // buttonCFG
             // 
             this.buttonCFG.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonCFG.BackColor = System.Drawing.Color.White;
             this.buttonCFG.AutoSize = true;
             this.buttonCFG.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonCFG.Location = new System.Drawing.Point(809, 30);
@@ -301,18 +302,11 @@
             // 
             // RawVelocity
             // 
-            this.RawVelocity.BackColor = System.Drawing.Color.DimGray;
+            this.RawVelocity.BorderlineColor = System.Drawing.Color.Black;
+            this.RawVelocity.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.RawVelocity.BorderSkin.BackColor = System.Drawing.Color.Black;
             chartArea1.Name = "ChartArea1";
             this.RawVelocity.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.Color.White;
-            legend1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            legend1.InterlacedRows = true;
-            legend1.IsDockedInsideChartArea = false;
-            legend1.Name = "Legend1";
-            legend1.Position.Auto = false;
-            legend1.Position.Height = 8.026756F;
-            legend1.Position.Width = 21.98853F;
-            this.RawVelocity.Legends.Add(legend1);
             this.RawVelocity.Location = new System.Drawing.Point(28, 72);
             this.RawVelocity.Name = "RawVelocity";
             this.RawVelocity.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
@@ -340,14 +334,6 @@
             chartArea2.BackSecondaryColor = System.Drawing.Color.Black;
             chartArea2.Name = "ChartArea1";
             this.RawDataQuality.ChartAreas.Add(chartArea2);
-            legend2.Alignment = System.Drawing.StringAlignment.Center;
-            legend2.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            legend2.DockedToChartArea = "ChartArea1";
-            legend2.Name = "Legend1";
-            legend2.Position.Auto = false;
-            legend2.Position.Height = 8.026756F;
-            legend2.Position.Width = 17.58389F;
-            this.RawDataQuality.Legends.Add(legend2);
             this.RawDataQuality.Location = new System.Drawing.Point(576, 72);
             this.RawDataQuality.Name = "RawDataQuality";
             series2.ChartArea = "ChartArea1";
