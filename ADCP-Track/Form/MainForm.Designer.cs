@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.MenuStrip menuStripTools;
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.ToolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.connexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,6 +66,7 @@
             this.RawVelocity = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.RawDataQuality = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelADCP = new System.Windows.Forms.Label();
+            this.textBoxPortCOM = new System.Windows.Forms.TextBox();
             menuStripTools = new System.Windows.Forms.MenuStrip();
             menuStripTools.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RawVelocity)).BeginInit();
@@ -299,67 +300,67 @@
             // 
             this.RawVelocity.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RawVelocity.BackColor = System.Drawing.Color.DimGray;
-            chartArea3.Name = "ChartArea1";
-            this.RawVelocity.ChartAreas.Add(chartArea3);
-            legend3.BackColor = System.Drawing.Color.White;
-            legend3.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            legend3.InterlacedRows = true;
-            legend3.IsDockedInsideChartArea = false;
-            legend3.Name = "Legend1";
-            legend3.Position.Auto = false;
-            legend3.Position.Height = 8.026756F;
-            legend3.Position.Width = 21.98853F;
-            this.RawVelocity.Legends.Add(legend3);
+            chartArea7.Name = "ChartArea1";
+            this.RawVelocity.ChartAreas.Add(chartArea7);
+            legend7.BackColor = System.Drawing.Color.White;
+            legend7.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            legend7.InterlacedRows = true;
+            legend7.IsDockedInsideChartArea = false;
+            legend7.Name = "Legend1";
+            legend7.Position.Auto = false;
+            legend7.Position.Height = 8.026756F;
+            legend7.Position.Width = 21.98853F;
+            this.RawVelocity.Legends.Add(legend7);
             this.RawVelocity.Location = new System.Drawing.Point(28, 72);
             this.RawVelocity.Name = "RawVelocity";
             this.RawVelocity.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.LabelBorderWidth = 0;
-            series3.Legend = "Legend1";
-            series3.MarkerBorderWidth = 2;
-            series3.MarkerSize = 10;
-            series3.Name = "Raw Velocity";
-            this.RawVelocity.Series.Add(series3);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series7.LabelBorderWidth = 0;
+            series7.Legend = "Legend1";
+            series7.MarkerBorderWidth = 2;
+            series7.MarkerSize = 10;
+            series7.Name = "Raw Velocity";
+            this.RawVelocity.Series.Add(series7);
             this.RawVelocity.Size = new System.Drawing.Size(524, 300);
             this.RawVelocity.TabIndex = 6;
             this.RawVelocity.Text = "chartRawVelocity";
-            title3.Alignment = System.Drawing.ContentAlignment.TopCenter;
-            title3.ForeColor = System.Drawing.Color.White;
-            title3.Name = "Raw Velocity";
-            title3.Text = "Raw Velocity";
-            this.RawVelocity.Titles.Add(title3);
+            title7.Alignment = System.Drawing.ContentAlignment.TopCenter;
+            title7.ForeColor = System.Drawing.Color.White;
+            title7.Name = "Raw Velocity";
+            title7.Text = "Raw Velocity";
+            this.RawVelocity.Titles.Add(title7);
             // 
             // RawDataQuality
             // 
             this.RawDataQuality.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.RawDataQuality.BackColor = System.Drawing.Color.DimGray;
-            chartArea4.BackSecondaryColor = System.Drawing.Color.Black;
-            chartArea4.Name = "ChartArea1";
-            this.RawDataQuality.ChartAreas.Add(chartArea4);
-            legend4.Alignment = System.Drawing.StringAlignment.Center;
-            legend4.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            legend4.DockedToChartArea = "ChartArea1";
-            legend4.Name = "Legend1";
-            legend4.Position.Auto = false;
-            legend4.Position.Height = 8.026756F;
-            legend4.Position.Width = 17.58389F;
-            this.RawDataQuality.Legends.Add(legend4);
+            chartArea8.BackSecondaryColor = System.Drawing.Color.Black;
+            chartArea8.Name = "ChartArea1";
+            this.RawDataQuality.ChartAreas.Add(chartArea8);
+            legend8.Alignment = System.Drawing.StringAlignment.Center;
+            legend8.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            legend8.DockedToChartArea = "ChartArea1";
+            legend8.Name = "Legend1";
+            legend8.Position.Auto = false;
+            legend8.Position.Height = 8.026756F;
+            legend8.Position.Width = 17.58389F;
+            this.RawDataQuality.Legends.Add(legend8);
             this.RawDataQuality.Location = new System.Drawing.Point(576, 72);
             this.RawDataQuality.Name = "RawDataQuality";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Legend = "Legend1";
-            series4.Name = "RawDataQuality";
-            this.RawDataQuality.Series.Add(series4);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series8.Legend = "Legend1";
+            series8.Name = "RawDataQuality";
+            this.RawDataQuality.Series.Add(series8);
             this.RawDataQuality.Size = new System.Drawing.Size(746, 300);
             this.RawDataQuality.TabIndex = 7;
             this.RawDataQuality.Text = "chartRawDataQuality";
-            title4.Alignment = System.Drawing.ContentAlignment.TopCenter;
-            title4.ForeColor = System.Drawing.Color.White;
-            title4.Name = "Raw Data Quality";
-            title4.Text = "Raw Data Quality";
-            this.RawDataQuality.Titles.Add(title4);
+            title8.Alignment = System.Drawing.ContentAlignment.TopCenter;
+            title8.ForeColor = System.Drawing.Color.White;
+            title8.Name = "Raw Data Quality";
+            title8.Text = "Raw Data Quality";
+            this.RawDataQuality.Titles.Add(title8);
             // 
             // labelADCP
             // 
@@ -372,6 +373,15 @@
             this.labelADCP.TabIndex = 10;
             this.labelADCP.Text = "ADCP :";
             // 
+            // textBoxPortCOM
+            // 
+            this.textBoxPortCOM.Enabled = false;
+            this.textBoxPortCOM.Location = new System.Drawing.Point(164, 629);
+            this.textBoxPortCOM.Name = "textBoxPortCOM";
+            this.textBoxPortCOM.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPortCOM.TabIndex = 11;
+            this.textBoxPortCOM.TextChanged += new System.EventHandler(this.textBoxPortCOM_TextChanged);
+            // 
             // ADCPTrack
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
@@ -380,6 +390,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1334, 661);
+            this.Controls.Add(this.textBoxPortCOM);
             this.Controls.Add(this.labelADCP);
             this.Controls.Add(this.RawDataQuality);
             this.Controls.Add(this.RawVelocity);
@@ -433,6 +444,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label labelADCP;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemBreak;
+        private System.Windows.Forms.TextBox textBoxPortCOM;
     }
 }
 

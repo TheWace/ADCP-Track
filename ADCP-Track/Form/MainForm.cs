@@ -196,6 +196,12 @@ namespace ADCP_Track
         {
             new ADCPBreak().Break();
         }
+
+        public void textBoxPortCOM_TextChanged(object sender, EventArgs e)
+        {
+            Form cbox = Application.OpenForms["ConnectionADCP"];
+            textBoxPortCOM.Text = ((ConnectionADCP)cbox).comboBoxCOM.Text;
+        }
     }
 }
 

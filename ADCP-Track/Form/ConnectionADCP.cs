@@ -15,6 +15,7 @@ namespace ADCP_Track
     {
         SerialPort Serip = new SerialPort();
         
+        
         public ConnectionADCP()
         {
             InitializeComponent();
@@ -61,7 +62,7 @@ namespace ADCP_Track
         }
 
 
-        private void buttonValidation_Click(object sender, EventArgs e)
+        public void buttonValidation_Click(object sender, EventArgs e)
         {
             try
             {
@@ -81,12 +82,13 @@ namespace ADCP_Track
        
                 MessageBox.Show(ex.Message);
             }
-
+            
+            
 
 
         }
 
-        private void comboBoxCOM_SelectedIndexChanged(object sender, EventArgs e)
+        public void comboBoxCOM_SelectedIndexChanged(object sender, EventArgs e)
         {
             Serip.PortName = comboBoxCOM.SelectedItem.ToString();
             

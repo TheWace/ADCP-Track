@@ -12,7 +12,7 @@ namespace ADCP_Track.Commands
 
         public SerialPort Serip { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public static void StartPing()  //Lancement de l'ADCP
+        public void StartPing()  //Lancement de l'ADCP
         {
             try
             {
