@@ -82,7 +82,7 @@ namespace ADCP_Track
                 MessageBox.Show(ex.Message);
             }
 
-           
+            //this.textBoxPortCOM.Text = comboBoxCOM.SelectedItem.ToString(); 
         }
 
         public void comboBoxCOM_SelectedIndexChanged(object sender, EventArgs e)
