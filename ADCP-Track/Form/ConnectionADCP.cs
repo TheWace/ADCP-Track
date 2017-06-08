@@ -64,6 +64,22 @@ namespace ADCP_Track
 
         public void buttonValidation_Click(object sender, EventArgs e)
         {
+            connectionADCP();
+            
+            // affichage du port com dans le form principale
+            //this.textBoxPortCOM.Text = comboBoxCOM.SelectedItem.ToString(); 
+        }
+
+        public void connectionADCP()
+        {
+            // Cree la connection avec l'ADCP
+            Serip.BaudRate = int.Parse(comboBoxBaudrate.SelectedItem.ToString());
+            Serip.PortName = comboBoxCOM.SelectedItem.ToString();
+            Serip.DtrEnable = true;
+            Serip.Parity = Parity.None;
+            Serip.StopBits = StopBits.One;
+            Serip.DataBits = 8;
+            Serip.Handshake = Handshake.None;
             try
             {
                 Serip.Open();
@@ -77,22 +93,29 @@ namespace ADCP_Track
             {
                 MessageBox.Show(ex.Message);
                 this.Close();
-            }catch(UnauthorizedAccessException ex)
+            }
+            catch (UnauthorizedAccessException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            Serip.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+        }
 
-            //this.textBoxPortCOM.Text = comboBoxCOM.SelectedItem.ToString(); 
+        private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
+        {
+            SerialPort sp = (SerialPort)sender;
+            string indata = sp.ReadExisting();
         }
 
         public void comboBoxCOM_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Serip.PortName = comboBoxCOM.SelectedItem.ToString();
+            comboBoxCOM.Text = comboBoxCOM.SelectedItem.ToString();
         }
 
+        
         private void comboBoxBaudrate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Serip.BaudRate = int.Parse(comboBoxBaudrate.SelectedItem.ToString());
+            comboBoxBaudrate.Text = comboBoxBaudrate.SelectedItem.ToString();
         }
 
         private void ConnectionADCP_Load(object sender, EventArgs e)

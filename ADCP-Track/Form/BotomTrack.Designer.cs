@@ -39,6 +39,7 @@
             this.Name = "BotomTrack";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BotomTrack";
             this.ResumeLayout(false);
 

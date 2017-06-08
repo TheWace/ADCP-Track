@@ -197,6 +197,7 @@ namespace ADCP_Track
         {
             /* Form cbox = Application.OpenForms["ConnectionADCP"];
              textBoxPortCOM.Text = ((ConnectionADCP)cbox).comboBoxCOM.Text;  */
+            ConnectionADCP.GetDataADCP();
         }
 
     }
