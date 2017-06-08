@@ -152,6 +152,7 @@
             this.HelpButton = true;
             this.Name = "ConnectionADCP";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConnectionADCP";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.ConnectionADCP_Load);
