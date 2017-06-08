@@ -164,8 +164,8 @@
         private System.Windows.Forms.Button buttonConfigAuto;
         private System.Windows.Forms.Button buttonValidation;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.ComboBox comboBoxCOM;
-        private System.Windows.Forms.ComboBox comboBoxBaudrate;
+        public System.Windows.Forms.ComboBox comboBoxCOM;
+        public System.Windows.Forms.ComboBox comboBoxBaudrate;
         private System.Windows.Forms.ComboBox comboBoxParity;
         private System.Windows.Forms.ComboBox comboBoxBits;
     }

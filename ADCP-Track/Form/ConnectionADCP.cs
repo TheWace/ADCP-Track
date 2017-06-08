@@ -13,10 +13,9 @@ namespace ADCP_Track
 {
     public partial class ConnectionADCP : Form
     {
-        SerialPort Serip = new SerialPort();
 
         private string indata;
-
+        private Commands.CreateConnectionADCP Serip ;
 
         public ConnectionADCP()
         {
@@ -67,49 +66,28 @@ namespace ADCP_Track
 
         public void buttonValidation_Click(object sender, EventArgs e)
         {
-            connectionADCP();
             
+            try
+            {
+                Serip.connection();
+                Serip.baudrateValue = int.Parse(comboBoxBaudrate.SelectedItem.ToString());
+                Serip.namePort = comboBoxCOM.SelectedItem.ToString();
+                Serip.open();
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             // affichage du port com dans le form principale
             //this.textBoxPortCOM.Text = comboBoxCOM.SelectedItem.ToString(); 
         }
 
         public void connectionADCP()
         {
-            // Cree la connection avec l'ADCP
-            Serip.BaudRate = int.Parse(comboBoxBaudrate.SelectedItem.ToString());
-            Serip.PortName = comboBoxCOM.SelectedItem.ToString();
-            Serip.DtrEnable = true;
-            Serip.Parity = Parity.None;
-            Serip.StopBits = StopBits.One;
-            Serip.DataBits = 8;
-            Serip.Handshake = Handshake.None;
-            try
-            {
-                Serip.Open();
-                this.Close();
-            }
-            catch (System.IO.IOException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (InvalidOperationException ex)
-            {
-                MessageBox.Show(ex.Message);
-                this.Close();
-            }
-            catch (UnauthorizedAccessException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            Serip.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+            
         }
 
-        private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
-        {
-            SerialPort sp = (SerialPort)sender;
-            indata = sp.ReadExisting();
-            //textBoxPortCOM.Text = indata;
-        }
+        
 
         public string sendData
         {
