@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace ADCP_Track.Commands
 {
-    class ADCPListCommands : Commands
+    class ADCPListCommands : CreateConnectionADCP
     {
-        public SerialPort Serip { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
         public void ListCommande()
         {
             Console.WriteLine("B:\t Send break to the ADCP \nC:\t Close connexion with port \nO:\t Open connexion with port \nOff:\t Make ADCP in standby \nS:\t Start ADCP\nES:\t Execute a script\nRS:\t Read a script");

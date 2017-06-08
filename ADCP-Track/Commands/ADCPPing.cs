@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace ADCP_Track.Commands
 {
-    class ADCPPing : Commands
+    class ADCPPing : CreateConnectionADCP
     {
-
-        public SerialPort Serip { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
        
         public void StartPing()  //Lancement de l'ADCP
         {

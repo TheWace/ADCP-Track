@@ -8,11 +8,8 @@ using System.Threading.Tasks;
 
 namespace ADCP_Track.Commands 
 {
-    class ADCPBreak : Commands
+    class ADCPBreak : CreateConnectionADCP
     {
-
-        public SerialPort Serip { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
         public void Break() //Break de l'ADCP
         {
 
