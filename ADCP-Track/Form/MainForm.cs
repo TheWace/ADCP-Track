@@ -36,8 +36,8 @@ namespace ADCP_Track
             
             about = new About();
             bt = new BotomTrack();
+            cADCP = new ConnectionADCP();
 
-            
 
         }
 
@@ -164,8 +164,7 @@ namespace ADCP_Track
 
         private void connexionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConnectionADCP conADCP = new ConnectionADCP();
-            conADCP.Show();
+            try { cADCP.Show(); }catch(ObjectDisposedException) {  }
         }
 
 
@@ -191,10 +190,7 @@ namespace ADCP_Track
             serialPort.Close();
         }
 
-        private void breakToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
+        
 
         public void textBoxPortCOM_TextChanged(object sender, EventArgs e)
         {
@@ -206,6 +202,11 @@ namespace ADCP_Track
         private void textBoxReceivedData1_TextChanged(object sender, EventArgs e)
         {
             textBoxReceivedData1.Text = cADCP.sendData;
+        }
+
+        private void buttonBreak_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

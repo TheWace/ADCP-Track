@@ -62,6 +62,7 @@ namespace ADCP_Track.Commands
             }
 
             Serip.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+            Serip.Write("===");
         }
 
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
