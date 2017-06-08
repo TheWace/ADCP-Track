@@ -18,6 +18,7 @@ namespace ADCP_Track
         
         public ConnectionADCP()
         {
+            
             InitializeComponent();
         }
 
@@ -105,7 +106,9 @@ namespace ADCP_Track
         {
             SerialPort sp = (SerialPort)sender;
             string indata = sp.ReadExisting();
+            //textBoxPortCOM.Text = indata;
         }
+        
 
         public void comboBoxCOM_SelectedIndexChanged(object sender, EventArgs e)
         {

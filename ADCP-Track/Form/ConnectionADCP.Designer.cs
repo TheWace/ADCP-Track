@@ -1,6 +1,6 @@
 ﻿namespace ADCP_Track
 {
-    partial class ConnectionADCP
+    partial class ConnectionADCP 
     {
         /// <summary>
         /// Required designer variable.
@@ -16,6 +16,7 @@
             if (disposing && (components != null))
             {
                 components.Dispose();
+                
             }
             base.Dispose(disposing);
         }
@@ -138,7 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(184, 274);
+            this.ClientSize = new System.Drawing.Size(183, 276);
             this.ControlBox = false;
             this.Controls.Add(this.comboBoxBits);
             this.Controls.Add(this.comboBoxParity);
@@ -151,7 +152,6 @@
             this.HelpButton = true;
             this.Name = "ConnectionADCP";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConnectionADCP";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.ConnectionADCP_Load);
@@ -164,7 +164,7 @@
         private System.Windows.Forms.Button buttonConfigAuto;
         private System.Windows.Forms.Button buttonValidation;
         private System.Windows.Forms.Button buttonCancel;
-        public  System.Windows.Forms.ComboBox comboBoxCOM;
+        private System.Windows.Forms.ComboBox comboBoxCOM;
         private System.Windows.Forms.ComboBox comboBoxBaudrate;
         private System.Windows.Forms.ComboBox comboBoxParity;
         private System.Windows.Forms.ComboBox comboBoxBits;

@@ -456,7 +456,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label labelADCP;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemBreak;
-        private System.Windows.Forms.TextBox textBoxPortCOM;
+        public  System.Windows.Forms.TextBox textBoxPortCOM;
         private System.Windows.Forms.TextBox textBoxReceivedData1;
         private System.Windows.Forms.TextBox textBoxReceivedData2;
     }
