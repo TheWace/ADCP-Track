@@ -23,6 +23,8 @@ namespace ADCP_Track
         public About about;
         public BotomTrack bt;
         public ProcessStartInfo psi;
+        private ConnectionADCP cADCP;
+
         public ADCPTrack()
         {
             InitializeComponent();
@@ -173,6 +175,7 @@ namespace ADCP_Track
             this.Close();
         }
 
+        
         private void helpToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
@@ -200,6 +203,10 @@ namespace ADCP_Track
             
         }
 
+        private void textBoxReceivedData1_TextChanged(object sender, EventArgs e)
+        {
+            textBoxReceivedData1.Text = cADCP.sendData;
+        }
     }
 }
 

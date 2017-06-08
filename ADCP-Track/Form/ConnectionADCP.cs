@@ -14,8 +14,10 @@ namespace ADCP_Track
     public partial class ConnectionADCP : Form
     {
         SerialPort Serip = new SerialPort();
-        
-        
+
+        private string indata;
+
+
         public ConnectionADCP()
         {
             
@@ -105,10 +107,17 @@ namespace ADCP_Track
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPort sp = (SerialPort)sender;
-            string indata = sp.ReadExisting();
+            indata = sp.ReadExisting();
             //textBoxPortCOM.Text = indata;
         }
-        
+
+        public string sendData
+        {
+            get
+            {
+                return indata;
+            }
+        }
 
         public void comboBoxCOM_SelectedIndexChanged(object sender, EventArgs e)
         {
