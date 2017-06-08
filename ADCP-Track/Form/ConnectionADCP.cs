@@ -20,6 +20,8 @@ namespace ADCP_Track
         public ConnectionADCP()
         {
             InitializeComponent();
+
+            Seriport = new Commands.CreateConnectionADCP();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -78,6 +80,7 @@ namespace ADCP_Track
             }
             // affichage du port com dans le form principale
             //this.textBoxPortCOM.Text = comboBoxCOM.SelectedItem.ToString(); 
+            
         }
 
         public string sendData

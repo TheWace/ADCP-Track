@@ -16,8 +16,23 @@ namespace ADCP_Track.Commands
 
         public void connection()
         {
-            Serip.PortName = namePort;
-            Serip.BaudRate = baudrateValue;
+            try
+            {
+                Serip.PortName = namePort;
+                Serip.BaudRate = baudrateValue;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("You can't take this value");
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("ERROR: port not found");
+            }
+            catch (ArgumentNullException)
+            {
+                Console.WriteLine("ERROR: port not found");
+            }
             Serip.DtrEnable = true;
             Serip.Parity = Parity.None;
             Serip.StopBits = StopBits.One;

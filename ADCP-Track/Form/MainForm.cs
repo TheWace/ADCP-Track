@@ -193,7 +193,7 @@ namespace ADCP_Track
 
         private void breakToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new ADCPBreak().Break();
+           
         }
 
         public void textBoxPortCOM_TextChanged(object sender, EventArgs e)
