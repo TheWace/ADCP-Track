@@ -12,6 +12,8 @@ namespace ADCP_Track
 {
     public partial class FileSearched : Form
     {
+
+        ExecSript file = new ExecSript();
         public FileSearched()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace ADCP_Track
                 this.DialogResult = DialogResult.Cancel;
             }
 
-            ExecSript.ExecuteScript(new string[] { textBoxFileName.Text });
+            file.ExecuteScript(new string[] { textBoxFileName.Text });
             this.Close();
         }
 

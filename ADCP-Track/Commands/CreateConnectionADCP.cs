@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace ADCP_Track.Commands
 {
-    class CreateConnectionADCP
+    class CreateConnectionADCP : SerialPort
     {
-        public static SerialPort Serip = new SerialPort();
         public string namePort { get; set; }
         public int baudrateValue { get; set; }
+        public static SerialPort Serip;
 
         public void connection()
         {
@@ -62,7 +62,8 @@ namespace ADCP_Track.Commands
             }
 
             Serip.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
-            
+            Serip.Write("===");
+
         }
 
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)

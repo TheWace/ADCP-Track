@@ -15,13 +15,12 @@ namespace ADCP_Track
     {
 
         private string indata;
-        private Commands.CreateConnectionADCP Seriport ;
 
+        private Commands.CreateConnectionADCP Serip = new Commands.CreateConnectionADCP();
         public ConnectionADCP()
         {
             InitializeComponent();
 
-            Seriport = new Commands.CreateConnectionADCP();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -70,9 +69,9 @@ namespace ADCP_Track
             
             try
             {
-                Seriport.connection();
+                Serip.connection();
 
-                Seriport.open();
+                Serip.open();
             }
             catch (NullReferenceException ex)
             {
@@ -80,6 +79,7 @@ namespace ADCP_Track
             }
             // affichage du port com dans le form principale
             //this.textBoxPortCOM.Text = comboBoxCOM.SelectedItem.ToString(); 
+
             
         }
 
@@ -94,14 +94,14 @@ namespace ADCP_Track
         private void comboBoxCOM_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxCOM.Text = comboBoxCOM.SelectedItem.ToString();
-            Seriport.namePort = comboBoxCOM.SelectedItem.ToString();
+            Serip.namePort = comboBoxCOM.SelectedItem.ToString();
         }
 
         
         private void comboBoxBaudrate_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxBaudrate.Text = comboBoxBaudrate.SelectedItem.ToString();
-            Seriport.baudrateValue = int.Parse(comboBoxBaudrate.SelectedItem.ToString());
+            Serip.baudrateValue = int.Parse(comboBoxBaudrate.SelectedItem.ToString());
         }
 
         private void ConnectionADCP_Load(object sender, EventArgs e)

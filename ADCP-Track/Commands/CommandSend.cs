@@ -9,11 +9,10 @@ using System.IO.Ports;
 namespace ADCP_Track.Commands
 {
     class CommandSend : CreateConnectionADCP
-
     {
+
         public void Break() //Break de l'ADCP
         {
-
             try //Vérification de la connexion du port
             {
                 Thread.Sleep(300);
@@ -46,14 +45,15 @@ namespace ADCP_Track.Commands
             }
         }
 
-        public static void ExecuteScript(string[] scripts)
+        public void ExecuteScript(string[] scripts)
         {
+            ExecSript file = new ExecSript();
             try
             {
                 foreach (string line in scripts)
                 {
                     Thread.Sleep(100);
-                    ExecSript.Exec(line);
+                    file.Exec(line);
                 }
             }
             catch (NullReferenceException)

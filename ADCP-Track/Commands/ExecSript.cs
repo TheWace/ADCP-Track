@@ -8,20 +8,20 @@ using System.Threading.Tasks;
 
 namespace ADCP_Track
 {
-    class ExecSript
+    class ExecSript : Commands.CommandSend
     {
-        public static void Exec(string cmd)
+        public void Exec(string cmd)
         {
             switch (cmd.ToLower())
             {
-              /*  case "b":
+                case "b":
                     Break();
                     break;
                 case "c":
-                    Closing();
+                //    Closing();
                     break;
                 case "o":
-                    Opening();
+                //    Opening();
                     break;
                 case "s":
                     StartPing();
@@ -35,8 +35,8 @@ namespace ADCP_Track
                     Console.WriteLine("You cannot create an infinite loop");
                     break;
                 case "off":
-                    Powerdown();
-                    break;*/
+                 //   Powerdown();
+                    break;
                 default:
                     Console.WriteLine("Command Unknow");
                     break;
