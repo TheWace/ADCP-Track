@@ -10,22 +10,6 @@ namespace ADCP_Track
 {
     class ExecSript
     {
-        
-        public static void ExecuteScript(string[] scripts)
-        {
-            try
-            {
-                foreach (string line in scripts)
-                {
-                    Thread.Sleep(100);
-                    Exec(line);
-                }
-            }
-            catch (NullReferenceException)
-            {
-                Console.WriteLine("Not file found");
-            }
-        }
         public static void Exec(string cmd)
         {
             switch (cmd.ToLower())

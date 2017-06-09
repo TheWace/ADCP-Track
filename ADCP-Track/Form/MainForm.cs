@@ -36,7 +36,6 @@ namespace ADCP_Track
             
             about = new About();
             bt = new BotomTrack();
-            cADCP = new ConnectionADCP();
 
 
         }
@@ -164,7 +163,9 @@ namespace ADCP_Track
 
         private void connexionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try { cADCP.Show(); }catch(ObjectDisposedException) {  }
+
+            cADCP = new ConnectionADCP();
+            try { cADCP.ShowDialog(); }catch(ObjectDisposedException) {  }
         }
 
 

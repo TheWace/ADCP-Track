@@ -10,7 +10,7 @@ namespace ADCP_Track.Commands
 {
     class CreateConnectionADCP
     {
-        public SerialPort Serip = new SerialPort();
+        public static SerialPort Serip = new SerialPort();
         public string namePort { get; set; }
         public int baudrateValue { get; set; }
 
@@ -62,7 +62,7 @@ namespace ADCP_Track.Commands
             }
 
             Serip.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
-            Serip.Write("===");
+            
         }
 
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)

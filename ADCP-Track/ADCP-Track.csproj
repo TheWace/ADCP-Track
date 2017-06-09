@@ -47,9 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\ADCPBreak.cs" />
-    <Compile Include="Commands\ADCPListCommands.cs" />
-    <Compile Include="Commands\ADCPPing.cs" />
+    <Compile Include="Commands\CommandSend.cs" />
     <Compile Include="Commands\CreateConnectionADCP.cs" />
     <Compile Include="Form\About.cs">
       <SubType>Form</SubType>
