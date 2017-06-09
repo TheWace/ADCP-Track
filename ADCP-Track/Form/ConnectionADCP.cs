@@ -16,7 +16,7 @@ namespace ADCP_Track
 
         private string indata;
 
-        private Commands.CreateConnectionADCP Serip = new Commands.CreateConnectionADCP();
+        Commands.CreateConnectionADCP Serip { get; set; }
         public ConnectionADCP()
         {
             InitializeComponent();

@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace ADCP_Track.Commands
 {
-    class CreateConnectionADCP : SerialPort
+    class CreateConnectionADCP 
     {
         public string namePort { get; set; }
         public int baudrateValue { get; set; }
-        public static SerialPort Serip;
+        public static SerialPort Serip = new SerialPort();
 
         public void connection()
         {
