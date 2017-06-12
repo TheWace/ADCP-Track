@@ -72,7 +72,25 @@ namespace ADCP_Track
             {
                 Serip.connection();
 
-                Serip.open();
+                try
+                {
+                    Serip.Serip.Open();
+                    this.Close();
+                    Serip.Serip.Write("===");
+                }
+                catch (System.IO.IOException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                catch (InvalidOperationException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    this.Close();
+                }
+                catch (UnauthorizedAccessException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             catch (NullReferenceException ex)
             {

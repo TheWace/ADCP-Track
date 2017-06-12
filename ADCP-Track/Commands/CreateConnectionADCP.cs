@@ -38,32 +38,11 @@ namespace ADCP_Track.Commands
             Serip.StopBits = StopBits.One;
             Serip.DataBits = 8;
             Serip.Handshake = Handshake.None;
-        }
-
-        public void open()
-        {
-            try
-            {
-                Serip.Open();
-                ConnectionADCP.ActiveForm.Close();
-            }
-            catch (System.IO.IOException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (InvalidOperationException ex)
-            {
-                MessageBox.Show(ex.Message);
-                ConnectionADCP.ActiveForm.Close();
-            }
-            catch (UnauthorizedAccessException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
 
             Serip.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
-            Serip.Write("===");
         }
+
+        
 
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
