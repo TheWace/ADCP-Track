@@ -141,7 +141,7 @@ namespace ADCP_Track
 
         private void commandToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            new CmdADCP().Show();
                 
             //ouvre un terminal et la connection avec l'ADCP pour lui envoyer manuellement des commandes
             

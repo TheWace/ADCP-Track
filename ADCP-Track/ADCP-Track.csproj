@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\CmdADCP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\CmdADCP.Designer.cs">
+      <DependentUpon>CmdADCP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Commands\CommandSend.cs" />
     <Compile Include="Commands\CreateConnectionADCP.cs" />
     <Compile Include="Form\About.cs">
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\BotomTrack.resx">
       <DependentUpon>BotomTrack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\CmdADCP.resx">
+      <DependentUpon>CmdADCP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ConnectionADCP.resx">
       <DependentUpon>ConnectionADCP.cs</DependentUpon>
