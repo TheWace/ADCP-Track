@@ -95,14 +95,14 @@ namespace ADCP_Track
         private void comboBoxCOM_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxCOM.Text = comboBoxCOM.SelectedItem.ToString();
-            Serip.namePort = comboBoxCOM.SelectedItem.ToString();
+            Serip.namePort = comboBoxCOM.Text;
         }
 
         
         private void comboBoxBaudrate_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxBaudrate.Text = comboBoxBaudrate.SelectedItem.ToString();
-            Serip.baudrateValue = int.Parse(comboBoxBaudrate.SelectedItem.ToString());
+            Serip.baudrateValue = int.Parse(comboBoxBaudrate.Text);
         }
 
         private void ConnectionADCP_Load(object sender, EventArgs e)

@@ -61,12 +61,6 @@
     <Compile Include="Form\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AutoConfig.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\AutoConfig.Designer.cs">
-      <DependentUpon>AutoConfig.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\BotomTrack.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,9 +91,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form\About.resx">
       <DependentUpon>About.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\AutoConfig.resx">
-      <DependentUpon>AutoConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\BotomTrack.resx">
       <DependentUpon>BotomTrack.cs</DependentUpon>

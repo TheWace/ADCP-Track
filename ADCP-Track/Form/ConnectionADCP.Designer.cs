@@ -89,7 +89,7 @@
             this.comboBoxCOM.Name = "comboBoxCOM";
             this.comboBoxCOM.Size = new System.Drawing.Size(121, 21);
             this.comboBoxCOM.TabIndex = 3;
-            this.comboBoxCOM.Text = "COM1";
+            this.comboBoxCOM.SelectedIndex = 0 ;
             this.comboBoxCOM.SelectedIndexChanged += new System.EventHandler(this.comboBoxCOM_SelectedIndexChanged);
             // 
             // comboBoxBaudrate
@@ -110,7 +110,7 @@
             this.comboBoxBaudrate.Name = "comboBoxBaudrate";
             this.comboBoxBaudrate.Size = new System.Drawing.Size(121, 21);
             this.comboBoxBaudrate.TabIndex = 4;
-            this.comboBoxBaudrate.Text = "9600";
+            this.comboBoxBaudrate.SelectedIndex = 5;
             this.comboBoxBaudrate.SelectedIndexChanged += new System.EventHandler(this.comboBoxBaudrate_SelectedIndexChanged);
             // 
             // comboBoxParity

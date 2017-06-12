@@ -21,6 +21,10 @@ namespace ADCP_Track.Commands
                 Serip.PortName = namePort;
                 Serip.BaudRate = baudrateValue;
             }
+            catch (IndexOutOfRangeException)
+            {
+                Console.WriteLine("ERROR: port can't be used");
+            }
             catch (NullReferenceException)
             {
                 Console.WriteLine("ERROR: port not found");
@@ -58,7 +62,7 @@ namespace ADCP_Track.Commands
             }
 
             Serip.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
-
+            Serip.Write("===");
         }
 
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
