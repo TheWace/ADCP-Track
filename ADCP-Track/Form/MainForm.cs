@@ -141,23 +141,11 @@ namespace ADCP_Track
 
         private void commandToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string strp = Environment.CurrentDirectory;
             
                 
             //ouvre un terminal et la connection avec l'ADCP pour lui envoyer manuellement des commandes
             
-            //
-            // TODO !!!
-            //
-   
-            Process p = new Process();
-            p.StartInfo.RedirectStandardError = true;
-            p.StartInfo.RedirectStandardInput = true;
-            p.StartInfo.RedirectStandardOutput = true;
-            p.StartInfo.UseShellExecute = false;
-            p.StartInfo.FileName = "cmd.exe";
-            p.Start();
-            p.StandardInput.WriteLine("MKDIR test1");
+            //combobox pour ecrir les commandes a envoyer a l'ADCP
            
         }
 
