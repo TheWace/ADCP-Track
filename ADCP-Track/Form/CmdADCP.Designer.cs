@@ -34,13 +34,13 @@
             // textBox1
             // 
             this.textBox1.AcceptsReturn = true;
-            this.textBox1.Location = new System.Drawing.Point(0, 1);
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(2, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(779, 419);
+            this.textBox1.Size = new System.Drawing.Size(779, 358);
             this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
@@ -48,9 +48,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 420);
+            this.ClientSize = new System.Drawing.Size(783, 361);
             this.Controls.Add(this.textBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.IsMdiContainer = true;
             this.Name = "CmdADCP";
             this.ShowInTaskbar = false;

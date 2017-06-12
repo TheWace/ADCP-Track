@@ -15,12 +15,12 @@ namespace ADCP_Track
     {
 
         private string indata;
-
-        Commands.CreateConnectionADCP Serip { get; set; }
+        private Commands.CreateConnectionADCP Serip;
+       // Commands.CreateConnectionADCP Serip;
         public ConnectionADCP()
         {
             InitializeComponent();
-
+            Serip = new Commands.CreateConnectionADCP();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -110,6 +110,10 @@ namespace ADCP_Track
 
         }
 
+        public string GetNamePort()
+        {
+            return Serip.namePort;
+        }
         
     }
 }

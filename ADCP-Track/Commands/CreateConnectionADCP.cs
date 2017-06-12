@@ -12,7 +12,7 @@ namespace ADCP_Track.Commands
     {
         public string namePort { get; set; }
         public int baudrateValue { get; set; }
-        public static SerialPort Serip = new SerialPort();
+        public SerialPort Serip = new SerialPort();
 
         public void connection()
         {
@@ -20,10 +20,6 @@ namespace ADCP_Track.Commands
             {
                 Serip.PortName = namePort;
                 Serip.BaudRate = baudrateValue;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                Console.WriteLine("You can't take this value");
             }
             catch (NullReferenceException)
             {
@@ -62,7 +58,6 @@ namespace ADCP_Track.Commands
             }
 
             Serip.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
-            Serip.Write("===");
 
         }
 

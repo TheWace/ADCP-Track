@@ -20,11 +20,6 @@ namespace ADCP_Track
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (SerialIN.IsOpen)

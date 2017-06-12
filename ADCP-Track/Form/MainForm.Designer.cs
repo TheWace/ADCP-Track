@@ -423,7 +423,6 @@
             this.Controls.Add(this.buttonLDR);
             this.Controls.Add(this.buttonBOT);
             this.Controls.Add(menuStripTools);
-            this.IsMdiContainer = true;
             this.Location = new System.Drawing.Point(10, 10);
             this.MainMenuStrip = menuStripTools;
             this.Name = "ADCPTrack";
