@@ -7,20 +7,31 @@ using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ADCP_Track.Commands;
 using System.Windows.Forms;
 
 namespace ADCP_Track
 {
     public partial class ConnectionADCP : Form
     {
+        private CreateConnectionADCP Serip = new CreateConnectionADCP();
+        ComSettingsStruct ComSetting0;
 
-        private string indata;
-        private Commands.CreateConnectionADCP Serip;
-       // Commands.CreateConnectionADCP Serip;
+
+        public struct ComSettingsStruct
+        {
+            public string ComName;// = "COM1";
+            public int ComSpeed;// = 9600;
+        }
+        public ConnectionADCP(ComSettingsStruct ComSetting1)
+        {
+            Serip.namePort = ComSetting1.ComName;
+            Serip.baudrateValue = int.Parse(ComSetting1.ComSpeed.ToString());
+        }
+        // Commands.CreateConnectionADCP Serip;
         public ConnectionADCP()
         {
             InitializeComponent();
-            Serip = new Commands.CreateConnectionADCP();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -68,46 +79,32 @@ namespace ADCP_Track
         private void buttonValidation_Click(object sender, EventArgs e)
         {
             
+            
             try
             {
-                Serip.connection();
-
-                try
-                {
-                    Serip.Serip.Open();
-                    this.Close();
-                    Serip.Serip.Write("===");
-                }
-                catch (System.IO.IOException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                catch (InvalidOperationException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    this.Close();
-                }
-                catch (UnauthorizedAccessException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                Serip.Start();
+                this.Close();
+                Serip.Serip.Write("===");
             }
-            catch (NullReferenceException ex)
+            catch (System.IO.IOException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+            
             // affichage du port com dans le form principale
             //this.textBoxPortCOM.Text = comboBoxCOM.SelectedItem.ToString(); 
 
             
-        }
-
-        public string sendData
-        {
-            get
-            {
-                return indata;
-            }
         }
 
         private void comboBoxCOM_SelectedIndexChanged(object sender, EventArgs e)
@@ -127,6 +124,14 @@ namespace ADCP_Track
         {
 
         }
+        public ComSettingsStruct ComSetting
+        {
+            get { return ComSetting0; }
+        }
+
+
+
+       
 
         public string GetNamePort()
         {

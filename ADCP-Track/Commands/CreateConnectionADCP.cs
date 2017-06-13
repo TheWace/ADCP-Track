@@ -13,8 +13,10 @@ namespace ADCP_Track.Commands
         public string namePort { get; set; }
         public int baudrateValue { get; set; }
         public SerialPort Serip = new SerialPort();
+       
 
-        public void connection()
+
+        public CreateConnectionADCP()
         {
             try
             {
@@ -39,8 +41,8 @@ namespace ADCP_Track.Commands
             Serip.DataBits = 8;
             Serip.Handshake = Handshake.None;
 
-            Serip.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
         }
+        
 
         
 
@@ -49,6 +51,24 @@ namespace ADCP_Track.Commands
             SerialPort sp = (SerialPort)sender;
             string indata = sp.ReadExisting();
         }
+       
 
+        public SerialPort GetSerip()
+        {
+            return Serip;
+        }
+
+        public void SetSerip(SerialPort SP)
+        {
+            Serip = SP;
+        }
+
+        public void Start()
+        {
+
+            Serip.Open();
+
+            Serip.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+        }
     }
 }

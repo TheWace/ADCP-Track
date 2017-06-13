@@ -24,20 +24,17 @@ namespace ADCP_Track
         public BotomTrack bt;
         public ProcessStartInfo psi;
         private ConnectionADCP cADCP;
+        CreateConnectionADCP SeripADCP ;
 
         public ADCPTrack()
         {
             InitializeComponent();
-
         }
 
         private void ADCPTrack_Load(object sender, EventArgs e)
         {
-            
             about = new About();
             bt = new BotomTrack();
-
-
         }
 
         private void toolStripComboBox1_Click(object sender, EventArgs e)
@@ -153,7 +150,10 @@ namespace ADCP_Track
         {
 
             cADCP = new ConnectionADCP();
-            try { cADCP.ShowDialog(); }catch(ObjectDisposedException) {  }
+            try { cADCP.ShowDialog(); }catch(ObjectDisposedException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
@@ -190,12 +190,11 @@ namespace ADCP_Track
 
         private void textBoxReceivedData1_TextChanged(object sender, EventArgs e)
         {
-            textBoxReceivedData1.Text = cADCP.sendData;
         }
 
-        private void buttonBreak_Click(object sender, EventArgs e)
+        public void buttonBreak_Click(object sender, EventArgs e)
         {
-            
+            SeripADCP.Serip.Write("===");
         }
     }
 }
