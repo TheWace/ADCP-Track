@@ -91,17 +91,9 @@ namespace ADCP_Track
             
             try
             {
-                if (comboBoxCOM.Text == "")
-                {
-                    MessageBox.Show("Comport cannot be empty");
-                    this.DialogResult = DialogResult.Cancel;
-                }
-                else
-                {
-                    ComSetting0.ComName = comboBoxCOM.Text;
-                    ComSetting0.ComSpeed = int.Parse(comboBoxBaudrate.Text);
-                    this.DialogResult = DialogResult.OK;
-                }
+                ComSetting0.ComName = comboBoxCOM.Text;
+                ComSetting0.ComSpeed = int.Parse(comboBoxBaudrate.Text);
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (System.IO.IOException ex)
@@ -117,11 +109,11 @@ namespace ADCP_Track
             {
                 MessageBox.Show(ex.Message);
             }
-            Serip.Start();
+
             // affichage du port com dans le form principale
             //this.textBoxPortCOM.Text = comboBoxCOM.SelectedItem.ToString(); 
 
-            
+
         }
 
         private void comboBoxCOM_SelectedIndexChanged(object sender, EventArgs e)

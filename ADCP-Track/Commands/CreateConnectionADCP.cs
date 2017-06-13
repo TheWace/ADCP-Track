@@ -18,6 +18,7 @@ namespace ADCP_Track.Commands
         ConnectionADCP com0 = new ConnectionADCP();
         com0.ShowDialog();
         comstruct0 = com0.ComSetting;
+        Start();
         }
 
         

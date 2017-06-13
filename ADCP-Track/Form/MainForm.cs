@@ -23,7 +23,6 @@ namespace ADCP_Track
         public About about;
         public BotomTrack bt;
         public ProcessStartInfo psi;
-        private ConnectionADCP cADCP;
         CreateConnectionADCP SeripADCP ;
         
 
@@ -193,7 +192,7 @@ namespace ADCP_Track
 
         public void buttonBreak_Click(object sender, EventArgs e)
         {
-            SeripADCP.Serip.Write("===");
+
         }
     }
 }
