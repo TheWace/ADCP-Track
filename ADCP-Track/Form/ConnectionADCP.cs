@@ -23,16 +23,26 @@ namespace ADCP_Track
             public string ComName;// = "COM1";
             public int ComSpeed;// = 9600;
         }
+
         public ConnectionADCP(ComSettingsStruct ComSetting1)
         {
-            Serip.namePort = ComSetting1.ComName;
-            Serip.baudrateValue = int.Parse(ComSetting1.ComSpeed.ToString());
+            InitializeComponent();
+            comboBoxCOM.Text = ComSetting1.ComName;
+            comboBoxBaudrate.Text = ComSetting1.ComSpeed.ToString();
         }
         // Commands.CreateConnectionADCP Serip;
         public ConnectionADCP()
         {
             InitializeComponent();
         }
+
+        public ComSettingsStruct ComSetting
+        {
+            get { return ComSetting0; }
+        }
+
+
+        
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
@@ -78,13 +88,20 @@ namespace ADCP_Track
 
         private void buttonValidation_Click(object sender, EventArgs e)
         {
-            
-            
             try
             {
-                Serip.Start();
+                if (comboBoxCOM.Text == "")
+                {
+                    MessageBox.Show("Comport cannot be empty");
+                    this.DialogResult = DialogResult.Cancel;
+                }
+                else
+                {
+                    ComSetting0.ComName = comboBoxCOM.Text;
+                    ComSetting0.ComSpeed = int.Parse(comboBoxBaudrate.Text);
+                    this.DialogResult = DialogResult.OK;
+                }
                 this.Close();
-                Serip.Serip.Write("===");
             }
             catch (System.IO.IOException ex)
             {
@@ -99,8 +116,8 @@ namespace ADCP_Track
             {
                 MessageBox.Show(ex.Message);
             }
-            
-            
+
+               
             // affichage du port com dans le form principale
             //this.textBoxPortCOM.Text = comboBoxCOM.SelectedItem.ToString(); 
 
@@ -110,32 +127,19 @@ namespace ADCP_Track
         private void comboBoxCOM_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxCOM.Text = comboBoxCOM.SelectedItem.ToString();
-            Serip.namePort = comboBoxCOM.Text;
+            ComSetting0.ComName = comboBoxCOM.Text;
         }
 
         
         private void comboBoxBaudrate_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBoxBaudrate.Text = comboBoxBaudrate.SelectedItem.ToString();
-            Serip.baudrateValue = int.Parse(comboBoxBaudrate.Text);
+            ComSetting0.ComSpeed = int.Parse(comboBoxBaudrate.Text);
         }
 
         private void ConnectionADCP_Load(object sender, EventArgs e)
         {
 
-        }
-        public ComSettingsStruct ComSetting
-        {
-            get { return ComSetting0; }
-        }
-
-
-
-       
-
-        public string GetNamePort()
-        {
-            return Serip.namePort;
         }
         
     }

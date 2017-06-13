@@ -8,20 +8,25 @@ using System.Windows.Forms;
 
 namespace ADCP_Track.Commands
 {
-    class CreateConnectionADCP 
+    class CreateConnectionADCP
     {
-        public string namePort { get; set; }
-        public int baudrateValue { get; set; }
         public SerialPort Serip = new SerialPort();
-       
+        ConnectionADCP.ComSettingsStruct comstruct0;
 
+        public void GetADCPParameter()
+        {
+        ConnectionADCP com0 = new ConnectionADCP();
+        com0.ShowDialog();
+        comstruct0 = com0.ComSetting;
+        }
 
+        
         public CreateConnectionADCP()
         {
             try
             {
-                Serip.PortName = namePort;
-                Serip.BaudRate = baudrateValue;
+                Serip.PortName = comstruct0.ComName;
+                Serip.BaudRate = comstruct0.ComSpeed;
             }
             catch (IndexOutOfRangeException)
             {
@@ -40,6 +45,9 @@ namespace ADCP_Track.Commands
             Serip.StopBits = StopBits.One;
             Serip.DataBits = 8;
             Serip.Handshake = Handshake.None;
+            Serip.Open();
+
+            Serip.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
 
         }
         
@@ -63,12 +71,6 @@ namespace ADCP_Track.Commands
             Serip = SP;
         }
 
-        public void Start()
-        {
-
-            Serip.Open();
-
-            Serip.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
-        }
+        
     }
 }

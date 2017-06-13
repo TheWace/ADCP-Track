@@ -25,6 +25,7 @@ namespace ADCP_Track
         public ProcessStartInfo psi;
         private ConnectionADCP cADCP;
         CreateConnectionADCP SeripADCP ;
+        
 
         public ADCPTrack()
         {
@@ -149,11 +150,9 @@ namespace ADCP_Track
         private void connexionToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            cADCP = new ConnectionADCP();
-            try { cADCP.ShowDialog(); }catch(ObjectDisposedException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            CreateConnectionADCP cp = new CreateConnectionADCP();
+            cp.GetADCPParameter();
+            
         }
 
 
@@ -185,7 +184,7 @@ namespace ADCP_Track
         {
             /* Form cbox = Application.OpenForms["ConnectionADCP"];
              textBoxPortCOM.Text = ((ConnectionADCP)cbox).comboBoxCOM.Text;  */
-            textBoxPortCOM.Text = cADCP.GetNamePort();
+            //textBoxPortCOM.Text = cADCP.GetNamePort();
         }
 
         private void textBoxReceivedData1_TextChanged(object sender, EventArgs e)
