@@ -88,6 +88,7 @@ namespace ADCP_Track
 
         private void buttonValidation_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 if (comboBoxCOM.Text == "")
@@ -116,8 +117,7 @@ namespace ADCP_Track
             {
                 MessageBox.Show(ex.Message);
             }
-
-               
+            Serip.Start();
             // affichage du port com dans le form principale
             //this.textBoxPortCOM.Text = comboBoxCOM.SelectedItem.ToString(); 
 

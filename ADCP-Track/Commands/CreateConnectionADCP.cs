@@ -23,6 +23,31 @@ namespace ADCP_Track.Commands
         
         public CreateConnectionADCP()
         {
+            
+        }
+        
+
+        
+
+        private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
+        {
+            SerialPort sp = (SerialPort)sender;
+            string indata = sp.ReadExisting();
+        }
+       
+
+        public SerialPort GetSerip()
+        {
+            return Serip;
+        }
+
+        public void SetSerip(SerialPort SP)
+        {
+            Serip = SP;
+        }
+
+        public void Start()
+        {
             try
             {
                 Serip.PortName = comstruct0.ComName;
@@ -48,29 +73,7 @@ namespace ADCP_Track.Commands
             Serip.Open();
 
             Serip.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
-
         }
-        
-
-        
-
-        private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
-        {
-            SerialPort sp = (SerialPort)sender;
-            string indata = sp.ReadExisting();
-        }
-       
-
-        public SerialPort GetSerip()
-        {
-            return Serip;
-        }
-
-        public void SetSerip(SerialPort SP)
-        {
-            Serip = SP;
-        }
-
         
     }
 }
