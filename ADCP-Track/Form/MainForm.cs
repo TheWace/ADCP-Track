@@ -24,7 +24,8 @@ namespace ADCP_Track
         public BotomTrack bt;
         public ProcessStartInfo psi;
         CreateConnectionADCP SeripADCP = new CreateConnectionADCP() ;
-        
+        CreateConnectionADCP connection = new CreateConnectionADCP();
+
 
         public ADCPTrack()
         {
@@ -139,13 +140,11 @@ namespace ADCP_Track
         private void commandToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //combobox pour ecrir les commandes a envoyer a l'ADCP
-            SerialPort toto = SeripADCP.Seriport;
-              new CmdADCP(SeripADCP.Seriport).ShowDialog();
+            connection.GetCmd();
         }
 
         private void connexionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateConnectionADCP connection = new CreateConnectionADCP();
             connection.GetADCPParameterConnection();
         }
 

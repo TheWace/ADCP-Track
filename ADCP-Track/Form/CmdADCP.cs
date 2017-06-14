@@ -33,7 +33,7 @@ namespace ADCP_Track
         {
             if (SerialIN.IsOpen)
             {
-                if (e.KeyValue == 35) { SerialIN.Write("==="); };
+                if (e.KeyValue == 72) { SerialIN.Write("==="); };
             } 
         }
 
