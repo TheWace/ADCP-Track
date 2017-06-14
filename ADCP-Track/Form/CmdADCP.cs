@@ -51,7 +51,7 @@ namespace ADCP_Track
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+            textBox1.Text = Console.ReadLine();
         }
 
         public void PassSerialPort(SerialPort Serip)
