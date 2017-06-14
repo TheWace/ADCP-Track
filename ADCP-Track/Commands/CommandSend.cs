@@ -16,7 +16,7 @@ namespace ADCP_Track.Commands
             try //Vérification de la connexion du port
             {
                 Thread.Sleep(300);
-                Serip.Write("===");
+           //     Serip.Write("===");
             }
             catch (InvalidOperationException)
             {
@@ -37,7 +37,7 @@ namespace ADCP_Track.Commands
         {
             try
             {
-                Serip.Write("\t");
+         //       Serip.Write("\t");
             }
             catch (InvalidOperationException)
             {

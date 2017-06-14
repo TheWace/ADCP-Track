@@ -30,19 +30,17 @@ namespace ADCP_Track
             comboBoxCOM.Text = ComSetting1.ComName;
             comboBoxBaudrate.Text = ComSetting1.ComSpeed.ToString();
         }
+
+        public ComSettingsStruct ComSettingConnection
+        {
+            get { return ComSetting0; }
+        }
+
         // Commands.CreateConnectionADCP Serip;
         public ConnectionADCP()
         {
             InitializeComponent();
         }
-
-        public ComSettingsStruct ComSetting
-        {
-            get { return ComSetting0; }
-        }
-
-
-        
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {

@@ -138,20 +138,22 @@ namespace ADCP_Track
 
         private void commandToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new CmdADCP().Show();
-                
+
+            CreateConnectionADCP send = new CreateConnectionADCP();
+            send.Start();
+
             //ouvre un terminal et la connection avec l'ADCP pour lui envoyer manuellement des commandes
-            
+
             //combobox pour ecrir les commandes a envoyer a l'ADCP
-           
+
         }
 
         private void connexionToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            CreateConnectionADCP cp = new CreateConnectionADCP();
-            cp.GetADCPParameter();
-            
+            CreateConnectionADCP connection = new CreateConnectionADCP();
+            connection.GetADCPParameterConnection();
+            connection.Start();
         }
 
 

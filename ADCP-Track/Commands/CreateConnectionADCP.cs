@@ -10,45 +10,30 @@ namespace ADCP_Track.Commands
 {
     class CreateConnectionADCP
     {
-        public SerialPort Serip = new SerialPort();
         ConnectionADCP.ComSettingsStruct comstruct0;
 
-        public void GetADCPParameter()
+        public void GetADCPParameterConnection()
         {
-        ConnectionADCP com0 = new ConnectionADCP();
-        com0.ShowDialog();
-        comstruct0 = com0.ComSetting;
-        Start();
+            ConnectionADCP com0 = new ConnectionADCP();
+            com0.ShowDialog();
+            comstruct0 = com0.ComSettingConnection;
         }
-
         
         public CreateConnectionADCP()
         {
             
         }
-        
-
-        
 
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPort sp = (SerialPort)sender;
             string indata = sp.ReadExisting();
         }
-       
-
-        public SerialPort GetSerip()
-        {
-            return Serip;
-        }
-
-        public void SetSerip(SerialPort SP)
-        {
-            Serip = SP;
-        }
 
         public void Start()
         {
+            
+            SerialPort Serip = new SerialPort();
             try
             {
                 Serip.PortName = comstruct0.ComName;
@@ -72,9 +57,11 @@ namespace ADCP_Track.Commands
             Serip.DataBits = 8;
             Serip.Handshake = Handshake.None;
             Serip.Open();
-
+            Serip.Write("===");
             Serip.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
         }
+        
+
         
     }
 }

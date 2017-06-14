@@ -14,18 +14,24 @@ namespace ADCP_Track
     public partial class CmdADCP : Form
     {
         private Encoding enc = Encoding.ASCII;
-        Commands.CreateConnectionADCP SerialIN;
+        SerialPort SerialIN;
+
+        public CmdADCP(SerialPort Serip)
+        {
+            InitializeComponent();
+        }
+
+
         public CmdADCP()
         {
             InitializeComponent();
-            SerialIN = new Commands.CreateConnectionADCP();
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (SerialIN.Serip.IsOpen)
+            if (SerialIN.IsOpen)
             {
-                if (e.KeyValue == 35) { SerialIN.Serip.Write("==="); };
+                if (e.KeyValue == 35) { SerialIN.Write("==="); };
             } 
         }
 
@@ -35,8 +41,8 @@ namespace ADCP_Track
         {
             tempC[0] = e.KeyChar;
             byte[] byte0 = enc.GetBytes(tempC);
-            if (SerialIN.Serip.IsOpen) // && tempC[0] != (char)35)
-            { SerialIN.Serip.Write(byte0, 0, byte0.Length); }
+            if (SerialIN.IsOpen) // && tempC[0] != (char)35)
+            { SerialIN.Write(byte0, 0, byte0.Length); }
 
             e.Handled = true;
         }
@@ -45,5 +51,6 @@ namespace ADCP_Track
         {
             
         }
+
     }
 }
