@@ -11,17 +11,18 @@ namespace ADCP_Track.Commands
     class CreateConnectionADCP
     {
         ConnectionADCP.ComSettingsStruct comstruct0;
+        internal SerialPort Seriport = new SerialPort();
 
         public void GetADCPParameterConnection()
         {
             ConnectionADCP com0 = new ConnectionADCP();
             com0.ShowDialog();
             comstruct0 = com0.ComSettingConnection;
+            Start();
         }
         
         public CreateConnectionADCP()
         {
-            
         }
 
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
@@ -32,12 +33,10 @@ namespace ADCP_Track.Commands
 
         public void Start()
         {
-            
-            SerialPort Serip = new SerialPort();
             try
             {
-                Serip.PortName = comstruct0.ComName;
-                Serip.BaudRate = comstruct0.ComSpeed;
+                Seriport.PortName = comstruct0.ComName;
+                Seriport.BaudRate = comstruct0.ComSpeed;
             }
             catch (IndexOutOfRangeException)
             {
@@ -51,16 +50,23 @@ namespace ADCP_Track.Commands
             {
                 Console.WriteLine("ERROR: port not found");
             }
-            Serip.DtrEnable = true;
-            Serip.Parity = Parity.None;
-            Serip.StopBits = StopBits.One;
-            Serip.DataBits = 8;
-            Serip.Handshake = Handshake.None;
-            Serip.Open();
-            Serip.Write("===");
-            Serip.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+            Seriport.DtrEnable = true;
+            Seriport.Parity = Parity.None;
+            Seriport.StopBits = StopBits.One;
+            Seriport.DataBits = 8;
+            Seriport.Handshake = Handshake.None;
+
+            Seriport.Open();
+
+            Seriport.Write("===");
+            Seriport.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
         }
         
+        public void GetCmd()
+        {
+            CmdADCP cmd = new CmdADCP(Seriport);
+            cmd.ShowDialog();
+        }
 
         
     }

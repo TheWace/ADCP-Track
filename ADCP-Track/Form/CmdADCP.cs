@@ -16,15 +16,17 @@ namespace ADCP_Track
         private Encoding enc = Encoding.ASCII;
         SerialPort SerialIN;
 
-        public CmdADCP(SerialPort Serip)
-        {
-            InitializeComponent();
-        }
 
 
         public CmdADCP()
         {
             InitializeComponent();
+        }
+
+        public CmdADCP(SerialPort Serial00)
+        {
+            InitializeComponent();
+            SerialIN = Serial00;
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -52,5 +54,9 @@ namespace ADCP_Track
             
         }
 
+        public void PassSerialPort(SerialPort Serip)
+        {
+            SerialIN = Serip;
+        }
     }
 }
