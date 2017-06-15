@@ -27,14 +27,21 @@ namespace ADCP_Track
         {
             InitializeComponent();
             SerialIN = Serial00;
+
+            openingSerial();
+        }
+
+        private void openingSerial()
+        {
+            SerialIN.Open();
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (SerialIN.IsOpen)
-            {
+           // if (SerialIN.IsOpen)
+            //{
                 if (e.KeyValue == 72) { SerialIN.Write("==="); };
-            } 
+           // } 
         }
 
         char[] tempC = new char[1];
@@ -43,15 +50,16 @@ namespace ADCP_Track
         {
             tempC[0] = e.KeyChar;
             byte[] byte0 = enc.GetBytes(tempC);
-            if (SerialIN.IsOpen) // && tempC[0] != (char)35)
-            { SerialIN.Write(byte0, 0, byte0.Length); }
+            //if (SerialIN.IsOpen) // && tempC[0] != (char)35)
+           // {
+                SerialIN.Write(byte0, 0, byte0.Length);
+          //  }
 
             e.Handled = true;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            textBox1.Text = Console.ReadLine();
         }
 
         public void PassSerialPort(SerialPort Serip)
