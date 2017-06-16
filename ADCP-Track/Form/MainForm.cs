@@ -186,7 +186,7 @@ namespace ADCP_Track
 
         public void buttonBreak_Click(object sender, EventArgs e)
         {
-
+            connection.Seriport.Write("===");
         }
     }
 }

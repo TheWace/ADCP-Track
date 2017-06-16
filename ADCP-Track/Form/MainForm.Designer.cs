@@ -54,7 +54,6 @@
             this.modifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemAntiSun = new System.Windows.Forms.ToolStripMenuItem();
             this.ModeToolStripMenuItemAutoConfig = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemBreak = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonBOT = new System.Windows.Forms.Button();
             this.buttonLDR = new System.Windows.Forms.Button();
             this.buttonNAV = new System.Windows.Forms.Button();
@@ -84,8 +83,7 @@
             this.ToolStripMenuItemHelp,
             this.ToolStripMenuItemSend,
             this.ToolStripMenuItemAntiSun,
-            this.ModeToolStripMenuItemAutoConfig,
-            this.ToolStripMenuItemBreak});
+            this.ModeToolStripMenuItemAutoConfig});
             menuStripTools.Location = new System.Drawing.Point(0, 0);
             menuStripTools.Name = "menuStripTools";
             menuStripTools.Padding = new System.Windows.Forms.Padding(6, 4, 6, 4);
@@ -108,21 +106,21 @@
             // connexionToolStripMenuItem
             // 
             this.connexionToolStripMenuItem.Name = "connexionToolStripMenuItem";
-            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.connexionToolStripMenuItem.Text = "Connexion";
             this.connexionToolStripMenuItem.Click += new System.EventHandler(this.connexionToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
@@ -231,11 +229,6 @@
             this.ModeToolStripMenuItemAutoConfig.Size = new System.Drawing.Size(81, 19);
             this.ModeToolStripMenuItemAutoConfig.Text = "AutoConfig";
             this.ModeToolStripMenuItemAutoConfig.Click += new System.EventHandler(this.ModeToolStripMenuItemAutoConfig_Click);
-            // 
-            // ToolStripMenuItemBreak
-            // 
-            this.ToolStripMenuItemBreak.Name = "ToolStripMenuItemBreak";
-            this.ToolStripMenuItemBreak.Size = new System.Drawing.Size(12, 19);
             // 
             // buttonBOT
             // 
@@ -394,7 +387,7 @@
             // 
             // buttonBreak
             // 
-            this.buttonBreak.Location = new System.Drawing.Point(273, 4);
+            this.buttonBreak.Location = new System.Drawing.Point(268, 3);
             this.buttonBreak.Name = "buttonBreak";
             this.buttonBreak.Size = new System.Drawing.Size(22, 23);
             this.buttonBreak.TabIndex = 14;
@@ -466,7 +459,6 @@
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label labelADCP;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemBreak;
         public  System.Windows.Forms.TextBox textBoxPortCOM;
         private System.Windows.Forms.TextBox textBoxReceivedData1;
         private System.Windows.Forms.TextBox textBoxReceivedData2;

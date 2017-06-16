@@ -28,7 +28,7 @@ namespace ADCP_Track
             InitializeComponent();
             SerialIN = Serial00;
 
-            openingSerial();
+           // openingSerial();
         }
 
         private void openingSerial()
@@ -62,7 +62,8 @@ namespace ADCP_Track
                 }
                 else if (tempC[0] == (char)13)//Enter
                 {
-                textBox1.Text += Environment.NewLine +">";
+                    SerialIN.Write(textBox1.ToString());
+                    textBox1.Text += Environment.NewLine +">";
                 }
                 else
                 {
