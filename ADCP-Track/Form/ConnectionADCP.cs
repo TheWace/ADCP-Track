@@ -73,13 +73,9 @@ namespace ADCP_Track
                         {
                             comboBoxCOM.Items.Add(tempPortName);
                         }
-
-                    }
-                         
+                    }     
                 }
             }
-            
-
             Cursor.Current = Cursors.Default;
         }
 

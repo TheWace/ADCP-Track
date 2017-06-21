@@ -28,7 +28,7 @@ namespace ADCP_Track
             InitializeComponent();
             SerialIN = Serial00;
 
-           // openingSerial();
+           openingSerial();
         }
 
         private void openingSerial()
