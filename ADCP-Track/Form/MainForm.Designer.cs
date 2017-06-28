@@ -64,8 +64,6 @@
             this.RawDataQuality = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelADCP = new System.Windows.Forms.Label();
             this.textBoxPortCOM = new System.Windows.Forms.TextBox();
-            this.textBoxReceivedData1 = new System.Windows.Forms.TextBox();
-            this.textBoxReceivedData2 = new System.Windows.Forms.TextBox();
             this.buttonBreak = new System.Windows.Forms.Button();
             menuStripTools = new System.Windows.Forms.MenuStrip();
             menuStripTools.SuspendLayout();
@@ -106,21 +104,21 @@
             // connexionToolStripMenuItem
             // 
             this.connexionToolStripMenuItem.Name = "connexionToolStripMenuItem";
-            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.connexionToolStripMenuItem.Text = "Connexion";
             this.connexionToolStripMenuItem.Click += new System.EventHandler(this.connexionToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click_1);
             // 
@@ -294,6 +292,7 @@
             // 
             // RawVelocity
             // 
+            this.RawVelocity.BackColor = System.Drawing.Color.DimGray;
             this.RawVelocity.BorderlineColor = System.Drawing.Color.Black;
             this.RawVelocity.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.RawVelocity.BorderSkin.BackColor = System.Drawing.Color.Black;
@@ -368,23 +367,6 @@
             this.textBoxPortCOM.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxPortCOM.TextChanged += new System.EventHandler(this.textBoxPortCOM_TextChanged);
             // 
-            // textBoxReceivedData1
-            // 
-            this.textBoxReceivedData1.Enabled = false;
-            this.textBoxReceivedData1.Location = new System.Drawing.Point(128, 454);
-            this.textBoxReceivedData1.Name = "textBoxReceivedData1";
-            this.textBoxReceivedData1.Size = new System.Drawing.Size(198, 20);
-            this.textBoxReceivedData1.TabIndex = 12;
-            this.textBoxReceivedData1.TextChanged += new System.EventHandler(this.textBoxReceivedData1_TextChanged);
-            // 
-            // textBoxReceivedData2
-            // 
-            this.textBoxReceivedData2.Enabled = false;
-            this.textBoxReceivedData2.Location = new System.Drawing.Point(412, 454);
-            this.textBoxReceivedData2.Name = "textBoxReceivedData2";
-            this.textBoxReceivedData2.Size = new System.Drawing.Size(198, 20);
-            this.textBoxReceivedData2.TabIndex = 13;
-            // 
             // buttonBreak
             // 
             this.buttonBreak.Location = new System.Drawing.Point(268, 3);
@@ -404,8 +386,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1334, 661);
             this.Controls.Add(this.buttonBreak);
-            this.Controls.Add(this.textBoxReceivedData2);
-            this.Controls.Add(this.textBoxReceivedData1);
             this.Controls.Add(this.textBoxPortCOM);
             this.Controls.Add(this.labelADCP);
             this.Controls.Add(this.RawDataQuality);
@@ -460,8 +440,6 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label labelADCP;
         public  System.Windows.Forms.TextBox textBoxPortCOM;
-        private System.Windows.Forms.TextBox textBoxReceivedData1;
-        private System.Windows.Forms.TextBox textBoxReceivedData2;
         private System.Windows.Forms.Button buttonBreak;
     }
 }
