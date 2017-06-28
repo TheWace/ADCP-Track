@@ -56,8 +56,14 @@ namespace ADCP_Track.Commands
             Seriport.DataBits = 8;
             Seriport.Handshake = Handshake.None;
 
-            Seriport.Open();
-
+            try
+            {
+                Seriport.Open();
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             Seriport.Write("===");
             Seriport.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
         }
