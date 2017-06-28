@@ -9,10 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ADCP_Track
 {
     public partial class CmdADCP : Form
     {
+        private BottomTrackExport.Class_PD0_55.
         private Encoding enc = Encoding.ASCII;
         SerialPort SerialIN;
 
