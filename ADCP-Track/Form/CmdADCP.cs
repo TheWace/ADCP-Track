@@ -17,7 +17,8 @@ namespace ADCP_Track
         SerialPort SerialIN;
 
 
-
+        public delegate void IODataReceived(Object sender, ComDataReceivied e);
+        public event IODataReceived DataREvent;
         public CmdADCP()
         {
             InitializeComponent();
@@ -34,6 +35,12 @@ namespace ADCP_Track
         private void openingSerial()
         {
             SerialIN.Open();
+        }
+
+        public struct ComDataReceivied
+        {
+            public string ASCIIDATA;
+            public Byte[] BinData;
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -62,8 +69,8 @@ namespace ADCP_Track
                 }
                 else if (tempC[0] == (char)13)//Enter
                 {
+                    textBox1.Text += Environment.NewLine + ">";
                     SerialIN.Write(textBox1.ToString());
-                    textBox1.Text += Environment.NewLine +">";
                 }
                 else
                 {
@@ -85,5 +92,35 @@ namespace ADCP_Track
         {
             SerialIN = Serip;
         }
+
+        private delegate void SetTextOutCallback(string txt);
+        private void display(string txt)
+        {
+            try
+            {
+                if (textBox1.InvokeRequired)
+                {
+                    SetTextOutCallback stoc = new SetTextOutCallback(display);
+                    this.Invoke(stoc, new object[] { txt });
+                }
+                else
+                {
+                    textBox1.AppendText(txt);
+                    if(textBox1.Text.Length > 10000) { textBox1.Text = ""; }
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void displaydata(object sender, CmdADCP.ComDataReceivied e)
+        {
+            display(e.ASCIIDATA);
+            DataREvent?.Invoke(this, e);
+
+        }
+
+        
     }
 }

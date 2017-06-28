@@ -33,7 +33,6 @@
             // 
             // textBox1
             // 
-            this.textBox1.AcceptsReturn = true;
             this.textBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(2, 2);
