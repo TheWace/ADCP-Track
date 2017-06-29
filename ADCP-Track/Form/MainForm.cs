@@ -1,4 +1,4 @@
-﻿using BottomTrackExport;
+﻿using WindowsFormsApplication1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,13 +19,13 @@ namespace ADCP_Track
     public partial class ADCPTrack : Form
     {
 
-        Class_PD0_55 DataSend = new Class_PD0_55();
+        Class_PD0 DataSend = new Class_PD0();
         public About about;
         public BotomTrack bt;
         public ProcessStartInfo psi;
         CreateConnectionADCP SeripADCP = new CreateConnectionADCP() ;
         CreateConnectionADCP connection = new CreateConnectionADCP();
-
+        
 
         public ADCPTrack()
         {
@@ -140,7 +140,7 @@ namespace ADCP_Track
         private void commandToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //combobox pour ecrir les commandes a envoyer a l'ADCP
-            connection.GetCmd();
+           connection.GetCmd();
         }
 
         private void connexionToolStripMenuItem_Click(object sender, EventArgs e)
