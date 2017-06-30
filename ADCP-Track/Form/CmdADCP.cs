@@ -16,10 +16,9 @@ namespace ADCP_Track
     public partial class CmdADCP : Form
     {
         private Class_PD0.RealTime PD0RealT = new Class_PD0.RealTime();
-   
         private Encoding enc = Encoding.ASCII;
         SerialPort SerialIN;
-
+        
 
 
         
@@ -65,7 +64,7 @@ namespace ADCP_Track
             byte[] byte0 = enc.GetBytes(tempC);
             if (SerialIN.IsOpen) 
             {
-
+                
                 SerialIN.Write(byte0, 0, byte0.Length);
                 if (tempC[0] == (char)8)//Backspace
                 {
@@ -77,10 +76,6 @@ namespace ADCP_Track
                 {
                     textBox1.Text += Environment.NewLine;
                     SerialIN.Write(textBox1.ToString());
-                }
-                else
-                {
-                    textBox1.Text += e.KeyChar.ToString().ToUpper();
                 }
                 textBox1.Focus();
                 textBox1.SelectionStart = textBox1.Text.Length;
@@ -108,18 +103,18 @@ namespace ADCP_Track
             combuff = new byte[bytes];
             SerialIN.Read(combuff, 0, bytes);
 
-            tempEnc = enc.GetString(combuff);
+            //tempEnc = enc.GetString(combuff);
             /*  if(PD0RealT.AddByteToBufferIN(combuff)== Class_PD0.RecordType.Ensemble)
               {
                   Process
               }*/
-
+            tempEnc = "hello";
             combuff = null;
             display(tempEnc);
         }
 
         private delegate void SetTextOutCallback(string txt);
-        private void display(string txt)
+        public void display(string txt)
         {
             try
             {
@@ -138,7 +133,7 @@ namespace ADCP_Track
                 MessageBox.Show(ex.Message);
             }
         }
-
+        
         void displaydata(object sender, CmdADCP.ComDataReceivied e)
         {
             display(e.ASCIIDATA);

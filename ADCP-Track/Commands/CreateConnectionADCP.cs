@@ -19,16 +19,19 @@ namespace ADCP_Track.Commands
             com0.ShowDialog();
             comstruct0 = com0.ComSettingConnection;
             Start();
+
+            
         }
         
         public CreateConnectionADCP()
         {
         }
 
-        private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
+        public void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPort sp = (SerialPort)sender;
-            string indata = sp.ReadExisting();
+           string indata = sp.ReadExisting();
+           // Seriport.display(indata);
         }
 
         public void Start()
@@ -72,6 +75,7 @@ namespace ADCP_Track.Commands
         {
             CmdADCP cmd = new CmdADCP(Seriport);
             cmd.ShowDialog();
+           
         }
 
         
