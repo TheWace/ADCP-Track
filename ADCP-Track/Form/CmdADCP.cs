@@ -18,10 +18,6 @@ namespace ADCP_Track
         private Class_PD0.RealTime PD0RealT = new Class_PD0.RealTime();
         private Encoding enc = Encoding.ASCII;
         SerialPort SerialIN;
-        
-
-
-        
         public delegate void IODataReceived(Object sender, ComDataReceivied e);
         public event IODataReceived DataREvent;
         public CmdADCP()

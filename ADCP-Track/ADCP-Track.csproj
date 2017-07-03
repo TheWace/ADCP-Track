@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Class _ PD0_36.cs" />
+    <Compile Include="Class\ConnectionAndTalk.cs" />
     <Compile Include="Form\CmdADCP.cs">
       <SubType>Form</SubType>
     </Compile>
