@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using ADCP_Track.Commands;
+
 using System.Windows.Forms;
 
 namespace ADCP_Track
@@ -25,6 +26,8 @@ namespace ADCP_Track
         public ProcessStartInfo psi;
         CreateConnectionADCP SeripADCP = new CreateConnectionADCP() ;
         CreateConnectionADCP connection = new CreateConnectionADCP();
+        Class.ConnectionAndTalk conect = new Class.ConnectionAndTalk();
+      //  CmdADCP cmd = new CmdADCP(Seriport);
         
 
         public ADCPTrack()
@@ -140,12 +143,13 @@ namespace ADCP_Track
         private void commandToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //combobox pour ecrir les commandes a envoyer a l'ADCP
-           connection.GetCmd();
+            conect.openwimdow();
+           
         }
 
         private void connexionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            connection.GetADCPParameterConnection();
+            conect.Start();
         }
 
 

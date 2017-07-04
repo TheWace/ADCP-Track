@@ -17,13 +17,19 @@ namespace ADCP_Track.Class
         public delegate void IODataReceived(Object sender, ComDataReceivied e);
         public event IODataReceived DataREvent;
 
-        CmdADCP cmd;
+        public CmdADCP cmd = new CmdADCP();
+       
         SerialPort Seriport;
 
         public ConnectionAndTalk()
         {
             Seriport = new SerialPort();
-            Start();
+            this.Start();
+        }
+
+        public void openwimdow()
+        {
+            cmd.Show();
         }
 
         public struct ComDataReceivied

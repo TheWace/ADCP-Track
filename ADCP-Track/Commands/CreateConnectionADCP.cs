@@ -71,12 +71,7 @@ namespace ADCP_Track.Commands
             Seriport.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
         }
         
-        public void GetCmd()
-        {
-            CmdADCP cmd = new CmdADCP(Seriport);
-            cmd.ShowDialog();
-           
-        }
+       
 
         
     }

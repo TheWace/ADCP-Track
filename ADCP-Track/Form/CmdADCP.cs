@@ -15,17 +15,18 @@ namespace ADCP_Track
 {
     public partial class CmdADCP : Form
     {
-        private Class_PD0.RealTime PD0RealT = new Class_PD0.RealTime();
+       /* private Class_PD0.RealTime PD0RealT = new Class_PD0.RealTime();
         private Encoding enc = Encoding.ASCII;
         SerialPort SerialIN;
         public delegate void IODataReceived(Object sender, ComDataReceivied e);
-        public event IODataReceived DataREvent;
+        public event IODataReceived DataREvent;*/
+
         public CmdADCP()
         {
             InitializeComponent();
         }
 
-        public CmdADCP(SerialPort Serial00)
+       /* public CmdADCP(SerialPort Serial00)
         {
             InitializeComponent();
             SerialIN = Serial00;
@@ -81,9 +82,9 @@ namespace ADCP_Track
            
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+       */ private void textBox1_TextChanged(object sender, EventArgs e)
         {
-        }
+        }/*
 
         public void PassSerialPort(SerialPort Serip)
         {
@@ -100,10 +101,10 @@ namespace ADCP_Track
             SerialIN.Read(combuff, 0, bytes);
 
             //tempEnc = enc.GetString(combuff);
-            /*  if(PD0RealT.AddByteToBufferIN(combuff)== Class_PD0.RecordType.Ensemble)
+             if(PD0RealT.AddByteToBufferIN(combuff)== Class_PD0.RecordType.Ensemble)
               {
                   Process
-              }*/
+              }
             tempEnc = "hello";
             combuff = null;
             display(tempEnc);
@@ -135,7 +136,7 @@ namespace ADCP_Track
             display(e.ASCIIDATA);
             DataREvent?.Invoke(this, e);
 
-        }
+        }*/
 
         
     }
