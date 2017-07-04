@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO.Ports;
 using System.Threading.Tasks;
+using WindowsFormsApplication1;
+using System.Windows.Forms;
 
 namespace ADCP_Track.Class
 {
@@ -14,11 +17,11 @@ namespace ADCP_Track.Class
         public delegate void IODataReceived(Object sender, ComDataReceivied e);
         public event IODataReceived DataREvent;
 
+        CmdADCP cmd;
         SerialPort Seriport;
 
-        public Form1()
+        public ConnectionAndTalk()
         {
-            InitializeComponent();
             Seriport = new SerialPort();
             Start();
         }
@@ -50,17 +53,17 @@ namespace ADCP_Track.Class
                 if (tempC[0] == (char)8)//Backspace
                 {
 
-                    textBox1.Text = textBox1.Text.Substring(0, textBox1.Text.Length - 1);
+                    cmd.textBox1.Text = cmd.textBox1.Text.Substring(0, cmd.textBox1.Text.Length - 1);
 
                 }
                 else if (tempC[0] == (char)13)//Enter
                 {
-                    textBox1.Text += Environment.NewLine;
-                    Seriport.Write(textBox1.ToString());
+                    cmd.textBox1.Text += Environment.NewLine;
+                    Seriport.Write(cmd.textBox1.ToString());
 
                 }
-                textBox1.Focus();
-                textBox1.SelectionStart = textBox1.Text.Length;
+                cmd.textBox1.Focus();
+                cmd.textBox1.SelectionStart = cmd.textBox1.Text.Length;
 
             }
             e.Handled = true;
@@ -82,15 +85,15 @@ namespace ADCP_Track.Class
         {
             try
             {
-                if (textBox1.InvokeRequired)
+                if (cmd.textBox1.InvokeRequired)
                 {
                     SetTextOutCallback stoc = new SetTextOutCallback(display);
-                    this.Invoke(stoc, new object[] { txt });
+                    cmd.Invoke(stoc, new object[] { txt });
                 }
                 else
                 {
-                    textBox1.AppendText(txt);
-                    if (textBox1.Text.Length > 10000) { textBox1.Text = ""; }
+                    cmd.textBox1.AppendText(txt);
+                    if (cmd.textBox1.Text.Length > 10000) { cmd.textBox1.Text = ""; }
                 }
             }
             catch (Exception ex)
