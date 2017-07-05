@@ -13,7 +13,7 @@ namespace ADCP_Track.Commands
         ConnectionADCP.ComSettingsStruct comstruct0;
         internal SerialPort Seriport = new SerialPort();
 
-        public void GetADCPParameterConnection()
+       /* public void GetADCPParameterConnection()
         {
             ConnectionADCP com0 = new ConnectionADCP();
             com0.ShowDialog();
@@ -21,7 +21,7 @@ namespace ADCP_Track.Commands
             Start();
 
             
-        }
+        }*/
         
         public CreateConnectionADCP()
         {
@@ -70,9 +70,45 @@ namespace ADCP_Track.Commands
             Seriport.Write("===");
             Seriport.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
         }
-        
-       
+        public void startWithParameter(SerialPort SP)
+        {
+            try
+            {
+                SP.PortName = comstruct0.ComName;
+                SP.BaudRate = comstruct0.ComSpeed;
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Console.WriteLine("ERROR: port can't be used");
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("ERROR: port not found");
+            }
+            catch (ArgumentNullException)
+            {
+                Console.WriteLine("ERROR: port not found");
+            }
+            SP.DtrEnable = true;
+            SP.Parity = Parity.None;
+            SP.StopBits = StopBits.One;
+            SP.DataBits = 8;
+            SP.Handshake = Handshake.None;
 
-        
+            try
+            {
+                SP.Open();
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            SP.Write("===");
+            SP.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+        }
+
+
+
+
     }
 }

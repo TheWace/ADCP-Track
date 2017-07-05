@@ -24,11 +24,12 @@ namespace ADCP_Track
         public About about;
         public BotomTrack bt;
         public ProcessStartInfo psi;
-        CreateConnectionADCP SeripADCP = new CreateConnectionADCP() ;
-        CreateConnectionADCP connection = new CreateConnectionADCP();
-        Class.ConnectionAndTalk conect = new Class.ConnectionAndTalk();
-      //  CmdADCP cmd = new CmdADCP(Seriport);
-        
+        public ConnectionADCP parameter;
+        // CreateConnectionADCP SeripADCP = new CreateConnectionADCP() ;
+        //CreateConnectionADCP connection = new CreateConnectionADCP();
+        //  CmdADCP cmd = new CmdADCP(Seriport);
+
+        Class.ConnectionAndTalk connect = new Class.ConnectionAndTalk();
 
         public ADCPTrack()
         {
@@ -39,6 +40,7 @@ namespace ADCP_Track
         {
             about = new About();
             bt = new BotomTrack();
+            parameter = new ConnectionADCP();
         }
 
         private void toolStripComboBox1_Click(object sender, EventArgs e)
@@ -143,13 +145,13 @@ namespace ADCP_Track
         private void commandToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //combobox pour ecrir les commandes a envoyer a l'ADCP
-            conect.openwimdow();
+            connect.openwimdow();
            
         }
 
         private void connexionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            conect.Start();
+            parameter.Show();
         }
 
 
@@ -190,7 +192,6 @@ namespace ADCP_Track
 
         public void buttonBreak_Click(object sender, EventArgs e)
         {
-            connection.Seriport.Write("===");
         }
     }
 }

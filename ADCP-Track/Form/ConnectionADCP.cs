@@ -107,7 +107,6 @@ namespace ADCP_Track
             // affichage du port com dans le form principale
             //this.textBoxPortCOM.Text = comboBoxCOM.SelectedItem.ToString(); 
 
-
         }
 
         private void comboBoxCOM_SelectedIndexChanged(object sender, EventArgs e)

@@ -56,7 +56,7 @@
             this.buttonValidation.TabIndex = 1;
             this.buttonValidation.Text = "Validation";
             this.buttonValidation.UseVisualStyleBackColor = true;
-            this.buttonValidation.Click += new System.EventHandler(this.buttonValidation_Click);
+            //this.buttonValidation.Click += new System.EventHandler(this.buttonValidation_Click);
             // 
             // buttonCancel
             // 

@@ -16,16 +16,19 @@ namespace ADCP_Track.Class
         private Encoding enc = Encoding.ASCII;
         public delegate void IODataReceived(Object sender, ComDataReceivied e);
         public event IODataReceived DataREvent;
-
+        ConnectionADCP conADCP;
         public CmdADCP cmd = new CmdADCP();
-       
+
+
         SerialPort Seriport;
 
         public ConnectionAndTalk()
         {
             Seriport = new SerialPort();
-            this.Start();
         }
+        
+        
+        
 
         public void openwimdow()
         {
@@ -116,7 +119,6 @@ namespace ADCP_Track.Class
         }
 
         // CreateConnection
-        //ComSettingsStruct comstruct0;
 
 
 
@@ -138,13 +140,13 @@ namespace ADCP_Track.Class
             display(tempEnc);
             // Seriport.display(indata);
         }
-
+        
         public void Start()
         {
             try
             {
-                Seriport.PortName = "COM1";//comstruct0.ComName;
-                Seriport.BaudRate = 9600;//comstruct0.ComSpeed;
+                Seriport.PortName = conADCP.comboBoxCOM.ComName;
+                Seriport.BaudRate = conADCP.comboBoxBaudrate.;
             }
             catch (IndexOutOfRangeException)
             {
